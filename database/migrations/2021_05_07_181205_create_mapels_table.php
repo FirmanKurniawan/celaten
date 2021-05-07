@@ -15,9 +15,10 @@ class CreateMapelsTable extends Migration
     {
         Schema::create('mapels', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreign('category_id')->references('id')->on('category_mapels');
+            $table->bigInteger('category_id')->unsigned();
+            // $table->foreign('category_id')->references('id')->on('category_mapels')->onDelete('cascade');
             $table->string('name')->nullable();
-            $table->enum('status', ['Y', 'N'])->nullable()->default(['Y']);
+            $table->enum('status', ['Y', 'N'])->nullable();
             $table->timestamps();
         });
     }

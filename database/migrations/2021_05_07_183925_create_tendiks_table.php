@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoryMapelsTable extends Migration
+class CreateTendiksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateCategoryMapelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('category_mapels', function (Blueprint $table) {
+        Schema::create('tendiks', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama_category')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ class CreateCategoryMapelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_mapels');
+        Schema::dropIfExists('tendiks');
     }
 }

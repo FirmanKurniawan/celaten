@@ -16,8 +16,10 @@ class CreateGuruMapelsTable extends Migration
         Schema::create('guru_mapels', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->nullable();
-            $table->foreign('status_id')->references('id')->on('status_gurus');
-            $table->foreign('mapel_id')->references('id')->on('mapels');
+            $table->bigInteger('status_id')->unsigned();
+            $table->foreign('status_id')->references('id')->on('status_gurus')->onDelete('cascade');
+            $table->bigInteger('mapel_id')->unsigned();
+            $table->foreign('mapel_id')->references('id')->on('mapels')->onDelete('cascade');
             $table->timestamps();
         });
     }
