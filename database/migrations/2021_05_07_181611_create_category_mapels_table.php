@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStatusGurusTable extends Migration
+class CreateCategoryMapelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateStatusGurusTable extends Migration
      */
     public function up()
     {
-        Schema::create('status_gurus', function (Blueprint $table) {
+        Schema::create('category_mapels', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->nullable();
-            $table->string('status')->nullable();
+            $table->string('nama_category', 100)->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateStatusGurusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('status_gurus');
+        Schema::dropIfExists('category_mapels');
     }
 }

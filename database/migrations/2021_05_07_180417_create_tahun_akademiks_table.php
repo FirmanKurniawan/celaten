@@ -15,6 +15,8 @@ class CreateTahunAkademiksTable extends Migration
     {
         Schema::create('tahun_akademiks', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name')->nullable();
+            $table->string('keterangan')->nullable();
             $table->timestamps();
         });
     }
