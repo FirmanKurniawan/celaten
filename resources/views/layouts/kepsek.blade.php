@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="{{asset('stisla/dist/assets/modules/fontawesome/css/all.min.css')}}">
 
   <!-- CSS Libraries -->
+  @yield('css')
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{asset('stisla/dist/assets/css/style.css')}}">
@@ -293,6 +294,7 @@
   <script src="{{asset('stisla/dist/assets/js/stisla.js')}}"></script>
   
   <!-- JS Libraies -->
+  @yield('js')
 
   <!-- Page Specific JS File -->
   
