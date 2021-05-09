@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('notlp');
             $table->string('jabatan');
             $table->string('role');
+            $table->string('status')->default('Kosong');
             $table->string('foto')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
