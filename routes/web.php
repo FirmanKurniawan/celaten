@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/master', function () {
+    return view('master.index');
+});
+
+Route::get('kepsek', 'KepsekController@dashboard');
+Route::get('kepsek/penilaian-guru', 'KepsekController@penilaian_guru');
+Route::get('kepsek/penilaian-karyawan', 'KepsekController@penilaian_karyawan');

@@ -8,8 +8,10 @@
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{asset('stisla/dist/assets/modules/bootstrap/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('stisla/dist/assets/modules/fontawesome/css/all.min.css')}}">
+  <link rel="stylesheet" href="{{asset('stisla/dist/assets/css/skins/customDataTable.css')}}">
 
   <!-- CSS Libraries -->
+    @yield('css')
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{asset('stisla/dist/assets/css/style.css')}}">
@@ -256,23 +258,18 @@
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
-            <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="index-0.html">General Dashboard</a></li>
-                <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
-              </ul>
-            </li>
+            <li class=active><a class="nav-link" href="{{asset('master')}}"><i class="fas fa-fire"></i> <span>Home</span></a></li>
+            
             <li class="menu-header">Starter</li>
             <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Layout</span></a>
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Tambah User</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="layout-default.html">Default Layout</a></li>
-                <li><a class="nav-link" href="layout-transparent.html">Transparent Sidebar</a></li>
-                <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
+                <li><a class="nav-link" href="layout-default.html">Tambah Kepala Sekolah</a></li>
+                <li><a class="nav-link" href="layout-transparent.html">Tambah Guru</a></li>
+                <li><a class="nav-link" href="layout-top-navigation.html">Tambah Karyawan</a></li>
               </ul>
             </li>
-            <li class=active><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>     
+            <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Membuat Pertanyaan</span></a></li>     
           </ul>
 
           <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
@@ -313,5 +310,8 @@
   <!-- Template JS File -->
   <script src="{{asset('stisla/dist/assets/js/scripts.js')}}"></script>
   <script src="{{asset('stisla/dist/assets/js/custom.js')}}"></script>
+
+ @yield('js')
+
 </body>
 </html>
