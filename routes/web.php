@@ -16,9 +16,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('/master', function () {
-    return view('master.index');
-});
+Route::get('master', 'MasterController@index');
+Route::get('master/guru', 'MasterController@indexguru');
+Route::get('master/karyawan', 'MasterController@indexkaryawan');
+Route::get('master/kepalasekolah', 'MasterController@indexkepsek');
+
 
 Route::get('kepsek', 'KepsekController@dashboard');
 Route::get('kepsek/penilaian-guru', 'KepsekController@penilaian_guru');
