@@ -11,11 +11,18 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up()    
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->integer('nik')->unique();
+            $table->integer('nip')->unique();
+            $table->string('alamat');
+            $table->integer('notlp');
+            $table->string('jabatan');
+            $table->string('role');
+            $table->string('foto')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
