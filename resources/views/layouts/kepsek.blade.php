@@ -257,9 +257,9 @@
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Menu</li>
-            <li><a class="nav-link" href="blank.html"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li> 
-            <li class=active><a class="nav-link" href="blank.html"><i class="fas fa-fire"></i> <span>Penilaian Guru</span></a></li>  
-            <li><a class="nav-link" href="blank.html"><i class="fas fa-fire"></i> <span>Penilaian Karyawan</span></a></li>     
+            <li><a class="nav-link" href="{{url('kepsek/')}}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li> 
+            <li class=active><a class="nav-link" href="{{url('kepsek/penilaian-guru')}}"><i class="fas fa-fire"></i> <span>Penilaian Guru</span></a></li>  
+            <li><a class="nav-link" href="{{url('kepsek/penilaian-karyawan')}}"><i class="fas fa-fire"></i> <span>Penilaian Karyawan</span></a></li>     
           </ul>
 
           <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
