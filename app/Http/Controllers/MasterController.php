@@ -14,12 +14,21 @@ class MasterController extends Controller
     public function indexguru(){
     	return view('master.guru.index');
     }
+    public function addguru(){
+        return view('master.guru.add');
+    }
 
     public function indexkepsek(){
     	return view('master.kepalasekolah.index');
     }
+    public function addkepsek(){
+        return view('master.kepalasekolah.add');
+    }
 
     public function indexkaryawan(){
     	return view('master.karyawan.index');
+    }
+    public function addkaryawan(){
+        return view('master.karyawan.add');
     }
 }

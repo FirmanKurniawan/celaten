@@ -18,8 +18,11 @@ Route::get('/', function () {
 
 Route::get('master', 'MasterController@index');
 Route::get('master/guru', 'MasterController@indexguru');
+Route::get('master/guru/add', 'MasterController@addguru');
 Route::get('master/karyawan', 'MasterController@indexkaryawan');
+Route::get('master/karyawan/add', 'MasterController@addkaryawan');
 Route::get('master/kepalasekolah', 'MasterController@indexkepsek');
+Route::get('master/kepalasekolah/add', 'MasterController@addkepsek');
 
 
 Route::get('kepsek', 'KepsekController@dashboard');

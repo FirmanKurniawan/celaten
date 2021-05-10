@@ -7,9 +7,14 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="card">
-					<div class="card-header">
-						<h4><b>Kelapa Sekolah</b></h4>
-					</div>
+					<div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+				      <h6 class="m-0 font-weight-bold"><strong>Data Kepala Sekolah dan Wakil Kepala Sekolah</strong></h6>
+				        <a href="{{asset('master/kepalasekolah/add')}}">
+				      <button h class="btn btn-outline-primary">
+				          <i class="fas fa-plus"></i>
+				      </button>
+				        </a>
+				    </div>
 					<div class="card-body">
 						<div class="table-responsive">
 							<table id="example" class="display nowrap" style="width:100%">
