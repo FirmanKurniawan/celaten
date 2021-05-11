@@ -18,6 +18,22 @@ class MasterController extends Controller
         return view('master.guru.add');
     }
 
+    public function process_addguru(Request $request){
+        $id = User::create($request->except('foto', 'password'));
+        $user = User::find($id->id);
+        $user->password = Bcrypt($request->password);
+
+        if($request->hasFile('foto')){
+            $name = $request->file('foto')->getClientOriginalName();
+            // $extension = $request->file('foto')->extension();
+            $request->foto->move(public_path('/foto/guru'), $name);
+            $user->foto = $name;
+        }
+
+        $user->save();
+        return redirect()->back();
+    }
+
     public function indexkepsek(){
     	return view('master.kepalasekolah.index');
     }
