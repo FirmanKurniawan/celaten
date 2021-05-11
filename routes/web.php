@@ -22,8 +22,10 @@ Route::get('master/guru/add', 'MasterController@addguru');
 Route::post('master/guru/add', 'MasterController@process_addguru');
 Route::get('master/karyawan', 'MasterController@indexkaryawan');
 Route::get('master/karyawan/add', 'MasterController@addkaryawan');
+Route::post('master/karyawan/add', 'MasterController@process_addkaryawan');
 Route::get('master/kepalasekolah', 'MasterController@indexkepsek');
 Route::get('master/kepalasekolah/add', 'MasterController@addkepsek');
+Route::post('master/kepalasekolah/add', 'MasterController@process_addkepsek');
 
 
 Route::get('kepsek', 'KepsekController@dashboard');

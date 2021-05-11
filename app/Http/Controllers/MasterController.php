@@ -25,7 +25,6 @@ class MasterController extends Controller
 
         if($request->hasFile('foto')){
             $name = $request->file('foto')->getClientOriginalName();
-            // $extension = $request->file('foto')->extension();
             $request->foto->move(public_path('/foto/guru'), $name);
             $user->foto = $name;
         }
@@ -41,10 +40,40 @@ class MasterController extends Controller
         return view('master.kepalasekolah.add');
     }
 
+    public function process_addkepsek(Request $request){
+        $id = User::create($request->except('foto', 'password'));
+        $user = User::find($id->id);
+        $user->password = Bcrypt($request->password);
+
+        if($request->hasFile('foto')){
+            $name = $request->file('foto')->getClientOriginalName();
+            $request->foto->move(public_path('/foto/kepsek'), $name);
+            $user->foto = $name;
+        }
+
+        $user->save();
+        return redirect()->back();
+    }
+
     public function indexkaryawan(){
     	return view('master.karyawan.index');
     }
     public function addkaryawan(){
         return view('master.karyawan.add');
+    }
+
+    public function process_addkaryawan(Request $request){
+        $id = User::create($request->except('foto', 'password'));
+        $user = User::find($id->id);
+        $user->password = Bcrypt($request->password);
+
+        if($request->hasFile('foto')){
+            $name = $request->file('foto')->getClientOriginalName();
+            $request->foto->move(public_path('/foto/karyawan'), $name);
+            $user->foto = $name;
+        }
+
+        $user->save();
+        return redirect()->back();
     }
 }

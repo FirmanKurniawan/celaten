@@ -16,10 +16,10 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->integer('nik')->unique();
-            $table->integer('nip')->unique();
+            $table->bigInteger('nik')->unique();
+            $table->bigInteger('nip')->unique();
             $table->string('alamat');
-            $table->integer('notlp');
+            $table->bigInteger('notlp');
             $table->string('jabatan');
             $table->string('role');
             $table->string('status')->default('Kosong');
