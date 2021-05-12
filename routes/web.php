@@ -12,22 +12,37 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login.login');
 });
 
 
-Route::get('master', 'MasterController@index');
-Route::get('master/guru', 'MasterController@indexguru');
-Route::get('master/guru/add', 'MasterController@addguru');
-Route::post('master/guru/add', 'MasterController@process_addguru');
-Route::get('master/karyawan', 'MasterController@indexkaryawan');
-Route::get('master/karyawan/add', 'MasterController@addkaryawan');
-Route::post('master/karyawan/add', 'MasterController@process_addkaryawan');
-Route::get('master/kepalasekolah', 'MasterController@indexkepsek');
-Route::get('master/kepalasekolah/add', 'MasterController@addkepsek');
-Route::post('master/kepalasekolah/add', 'MasterController@process_addkepsek');
+
+Route::prefix('master')->group(function() {
+	Route::get('/kepalasekolah', 'MasterController@indexkepsek');
+	Route::get('/kepalasekolah/add', 'MasterController@addkepsek');
+	Route::post('/kepalasekolah/add', 'MasterController@process_addkepsek');
+	Route::get('/kepalasekolah/delete/{id}', 'MasterController@deletekepsek');
+	Route::get('/kepalasekolah/edit/{id}/', 'MasterController@editkepsek');
+	Route::post('/kepalasekolah/edit', 'MasterController@process_editkepsek')->name('process_editkepsek');
+
+	Route::get('kepsek', 'KepsekController@dashboard');
+	Route::get('kepsek/penilaian-guru', 'KepsekController@penilaian_guru');
+	Route::get('kepsek/penilaian-karyawan', 'KepsekController@penilaian_karyawan');
 
 
-Route::get('kepsek', 'KepsekController@dashboard');
-Route::get('kepsek/penilaian-guru', 'KepsekController@penilaian_guru');
-Route::get('kepsek/penilaian-karyawan', 'KepsekController@penilaian_karyawan');
+	Route::get('/', 'MasterController@index');
+	Route::get('/guru', 'MasterController@indexguru');
+	Route::get('/guru/add', 'MasterController@addguru');
+	Route::post('/guru/add', 'MasterController@process_addguru');
+	Route::get('/guru/edit/{id}/', 'MasterController@editguru');
+	Route::post('/guru/edit', 'MasterController@process_editguru')->name('process_editguru');
+	Route::get('/guru/delete/{id}', 'MasterController@deleteguru');
+
+
+	Route::get('/karyawan', 'MasterController@indexkaryawan');
+	Route::get('/karyawan/add', 'MasterController@addkaryawan');
+	Route::post('/karyawan/add', 'MasterController@process_addkaryawan');
+	Route::get('/karyawan/delete/{id}', 'MasterController@deletekaryawan');
+	Route::get('/karyawan/edit/{id}/', 'MasterController@editkaryawan');
+	Route::post('/karyawan/edit', 'MasterController@process_editkaryawan')->name('process_editkaryawan');
+});

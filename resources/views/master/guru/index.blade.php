@@ -23,42 +23,48 @@
 							<table id="example" class="display nowrap" style="width:100%">
 								<thead>
 									<tr>
-										<th>Name</th>
-										<th>Position</th>
-										<th>Office</th>
-										<th>Age</th>
-										<th>Start date</th>
-										<th>Salary</th>
+										<th>No</th>
+										<th>Nama</th>
+										<th>NIK</th>
+										<th>NIP</th>
+										<th>Nomor Telepon</th>
+										<th>Jabatan</th>
+										<th>Email</th>
+										<th>Alamat</th>
+										<th>Foto</th>
+										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
+									@foreach($gurus as $s)
 									<tr>
-										<td>Tiger Nixon</td>
-										<td>System Architect</td>
-										<td>Edinburgh</td>
-										<td>61</td>
-										<td>2011/04/25</td>
-										<td>$320,800</td>
+										<td>{{ $loop->iteration }}</td>
+										<td>{{ $s->name }}</td>
+										<td>{{ $s->nik }}</td>
+										<td>{{ $s->nip }}</td>
+										<td>{{ $s->notlp }}</td>
+										<td>{{ $s->jabatan }}</td>
+										<td>{{ $s->email }}</td>
+										<td>{{ $s->alamat }}</td>
+										<td>
+											@if(!empty($s->foto))
+							                <img src="{{ asset('foto/guru/'.$s->foto) }}"style="width: 50px;height: 50px;" class="img-mini">
+							                @else
+							                <img src="{{ asset('stisla/images/avatar.png') }}" class="img-mini">
+							                @endif
+							                &nbsp;				
+										</td>
+										<td>
+											<a href="/master/guru/edit/{{$s->id}}" class="btn btn-outline-warning">
+							                  <i class="far fa-edit"></i>
+							                </a>
+							                <a href="/master/guru/delete/{{$s->id}}" class="btn btn-outline-danger">
+							                  <i class="far fa-trash-alt"></i>
+							                </a>
+            							</td>
 									</tr>
-									<tr>
-										<td>Garrett Winters</td>
-										<td>Accountant</td>
-										<td>Tokyo</td>
-										<td>63</td>
-										<td>2011/07/25</td>
-										<td>$170,750</td>
-									</tr>
+									@endforeach
 								</tbody>
-								<tfoot>
-								<tr>
-									<th>Name</th>
-									<th>Position</th>
-									<th>Office</th>
-									<th>Age</th>
-									<th>Start date</th>
-									<th>Salary</th>
-								</tr>
-								</tfoot>
 							</table>
 							
 						</div>
