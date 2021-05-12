@@ -39,4 +39,26 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function isMaster()
+    {
+        if($this->role == 1) return true;
+        return false;
+    }
+    public function isKepsek()
+    {
+        if($this->role == 2) return true;
+        return false;
+    }
+    public function isGuru()
+    {
+        if($this->role == 3) return true;
+        return false;
+    }
+    public function isKaryawan()
+    {
+        if($this->role == 4) return true;
+        return false;
+    }
 }
