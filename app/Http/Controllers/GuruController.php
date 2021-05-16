@@ -32,7 +32,6 @@ class GuruController extends Controller
     public function process_lanjut_penilaian_guru(Request $request){
     	$pertanyaan = Pertanyaan::all();
     	foreach($pertanyaan as $key => $pertanyaans){
-    		dd($request->pertanyaan);
     		$penilaian = new Penilaian;
     		$penilaian->userid = 1;
     		$penilaian->pertanyaanid = 1;
