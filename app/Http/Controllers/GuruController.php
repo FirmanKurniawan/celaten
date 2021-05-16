@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Pertanyaan;
 use \App\Penilaian;
+use Carbon\Carbon;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class GuruController extends Controller
 {
@@ -30,16 +32,16 @@ class GuruController extends Controller
     }
 
     public function process_lanjut_penilaian_guru(Request $request){
-    	$pertanyaan = Pertanyaan::all();
-    	foreach($pertanyaan as $key => $pertanyaans){
+    	foreach($request->pertanyaan as $key => $value){
+
     		$penilaian = new Penilaian;
     		$penilaian->userid = 1;
-    		$penilaian->pertanyaanid = 1;
+    		$penilaian->pertanyaanid = $key;
     		
-    		foreach($request->pertanyaan as $key => $value){
-    			$penilaian->bobot = $value;
-    			$penilaian->save();
-    		}
+    		$penilaian->bobot = $request->pertanyaan[$key];
+            $penilaian->tanggal = Carbon::now()->locale('id')->isoFormat('Do MMMM YYYY');
+    		$penilaian->save();
     	}
+        return redirect('guru')->with('success', 'Login Successfully!');;
     }
 }

@@ -15,7 +15,7 @@ class CreatePertanyaansTable extends Migration
     {
         Schema::create('pertanyaans', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('pertanyaan');
+            $table->mediumText('pertanyaan');
             $table->timestamps();
         });
     }

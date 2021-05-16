@@ -18,6 +18,7 @@ class CreatePenilaiansTable extends Migration
             $table->string('userid');
             $table->string('pertanyaanid');
             $table->integer('bobot');
+            $table->string('tanggal');
             $table->timestamps();
         });
     }

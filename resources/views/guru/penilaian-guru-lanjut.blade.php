@@ -7,20 +7,20 @@
 				<div class="card-header">
 					<h4>Penilaian Guru</h4>
 				</div>
-				<form action="/guru/penilaian-guru-lanjut" method="POST" enctype="multipart/form-data">
+				<form id="nilai" action="/guru/penilaian-guru-lanjut" method="POST" enctype="multipart/form-data">
 					@csrf
 					<div class="card-body">
-					@foreach($pertanyaan as $key => $pertanyaans)
+						@foreach($pertanyaan as $key => $pertanyaans)
 						<div class="form-group">
 							<label>{{$pertanyaans->pertanyaan}}</label>
 							<input type="hidden" name="pertanyaanid[]" value="1">
 						</div>
 						
 						<div class="form-group">
-							<label class="form-label">Bobot</label>
+							<label class="form-label">Bobot (1 sangat buruk - 10 sangat baik)</label>
 							<div class="selectgroup w-100">
 								<label class="selectgroup-item">
-									<input type="radio" name="pertanyaan[{{$pertanyaans->id}}]" value="1" class="selectgroup-input" checked="">
+									<input type="radio" name="pertanyaan[{{$pertanyaans->id}}]" value="1" class="selectgroup-input" checked>
 									<span class="selectgroup-button">1</span>
 								</label>
 								<label class="selectgroup-item">
@@ -61,18 +61,39 @@
 								</label>
 							</div>
 						</div>
-
 						@endforeach
-
-						<div class="form-row" style="float: right;">
-							<div class="form-group" style="float: right;">
-								<button type="submit" class="btn btn-primary" style="float: right;"><i class="fa fa-add">Submit</i></button>
-							</div>
-						</div>
 					</div>
 				</form>
+				
+				<div class="form-row" style="float: right;">
+					<div class="form-group" style="float: right;">
+						<button type="submit" class="btn btn-primary" style="float: right;" onclick="nilai()"><i class="fa fa-add">Submit</i></button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
+@endsection
+@section('js')
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript">
+	function nilai()
+	{
+		swal({
+			title: "Apakah sudah yakin untuk menilai?",
+			text: "Data yang terkirim akan masuk ke dalam penilaian!",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		})
+		.then((willDelete) => {
+		if (willDelete) {
+			$('#nilai').submit();
+		}else{
+			swal("Data anda berhasil di cancel", "Silakan klik tombol ok!", "error");
+		}
+		});
+	}
+</script>
 @endsection
