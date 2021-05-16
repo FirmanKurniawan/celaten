@@ -1,4 +1,5 @@
 @extends('layouts.guru')
+@section('status2') active @endsection
 @section('content')
 <section class="section">
 	<div class="card">

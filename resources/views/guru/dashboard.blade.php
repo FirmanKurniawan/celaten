@@ -1,4 +1,5 @@
 @extends('layouts.guru')
+@section('status1') active @endsection
 @section('content')
 <section class="section">
           <div class="row">

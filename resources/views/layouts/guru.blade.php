@@ -257,8 +257,8 @@
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Menu</li>
-            <li><a class="nav-link" href="{{url('guru/')}}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li> 
-            <li class=active><a class="nav-link" href="{{url('guru/penilaian-guru')}}"><i class="fas fa-fire"></i> <span>Penilaian Guru</span></a></li>    
+            <li class=@yield('status1')><a class="nav-link" href="{{url('guru/')}}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li> 
+            <li class=@yield('status2')><a class="nav-link" href="{{url('guru/penilaian-guru')}}"><i class="fas fa-fire"></i> <span>Penilaian Guru</span></a></li>    
           </ul>
 
           <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
