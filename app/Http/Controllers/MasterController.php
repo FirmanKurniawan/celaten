@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Katejabatan;
 
 class MasterController extends Controller
 {
@@ -14,10 +15,12 @@ class MasterController extends Controller
 
 
     public function indexguru(){
+        $d['katejabatans'] = Katejabatan::all();
         $d['gurus'] = User::all();
-    	return view('master.guru.index', $d);
+        return view('master.guru.index', $d);
     }
     public function addguru(){
+        $katejabatan = Katejabatan::all();
         return view('master.guru.add');
     }
 
@@ -36,8 +39,10 @@ class MasterController extends Controller
         return redirect('/master/guru');
     }
     public function editguru($id){
-        $gurus = User::find($id);
-        return view('master.guru.edit', compact('gurus'));
+        $d['katejabatans'] = Katejabatan::all();
+        $d['gurus'] = User::find($id);
+       /* $gurus = User::find($id);*/
+        return view('master.guru.edit', $d);
     }
     public function process_editguru(Request $r){
         $d = User::find($r->input('id'));
@@ -46,7 +51,7 @@ class MasterController extends Controller
         $d->nip = $r->input("nip");
         $d->alamat = $r->input("alamat");
         $d->notlp = $r->input("notlp");
-        $d->jabatan = $r->input("jabatan");
+        $d->jabatan_id = $r->input("jabatan_id");
         $d->email = $r->input("email");
 
         if($r->file('foto')){
@@ -102,7 +107,7 @@ class MasterController extends Controller
         $d->nip = $r->input("nip");
         $d->alamat = $r->input("alamat");
         $d->notlp = $r->input("notlp");
-        $d->jabatan = $r->input("jabatan");
+        $d->jabatan_id = $r->input("jabatan_id");
         $d->email = $r->input("email");
 
         if($r->file('foto')){
@@ -128,8 +133,9 @@ class MasterController extends Controller
 
 
     public function indexkaryawan(){
-        $d['karyawans'] = User::all();
-        return view('master.karyawan.index', $d);
+        $a['katejabatan'] = Katejabatan::all();
+        $a['karyawans'] = User::all();
+        return view('master.karyawan.index', $a);
     }
     public function addkaryawan(){
         return view('master.karyawan.add');
@@ -160,7 +166,7 @@ class MasterController extends Controller
         $d->nip = $r->input("nip");
         $d->alamat = $r->input("alamat");
         $d->notlp = $r->input("notlp");
-        $d->jabatan = $r->input("jabatan");
+        $d->jabatan_id = $r->input("jabatan_id");
         $d->email = $r->input("email");
 
         if($r->file('foto')){

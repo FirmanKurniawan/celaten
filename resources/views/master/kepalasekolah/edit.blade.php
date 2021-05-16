@@ -75,9 +75,19 @@
 										<i class="fas fa-user"></i>
 									</div>
 								</div>
-								<select class="form-control" name="jabatan" required >
-									<option value="{{$kepseks->jabatan}}" selected>Kepala Sekolah</option>
-									<option value="kaprog">Wakil Kepala Sekolah</option>
+								<select class="form-control" name="jabatan_id" required >
+									<option selected>Pilih Jabatan...</option>
+									<?php 
+                                        use App\Katejabatan;
+                                        $katejabatans = Katejabatan::where('role',1)->get();
+                                    ?>
+									@foreach($katejabatans as $j)
+									@if($j->id == $kepseks->jabatan_id)
+									<option value="{{$j->id}}" selected>{{$j->nama}}</option>
+									@else
+									<option value="{{$j->id}}">{{$j->nama}}</option>
+									@endif
+                                    @endforeach
 								</select>
 							</div>
 						</div>

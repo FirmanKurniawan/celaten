@@ -43,7 +43,7 @@
 										<td>{{ $s->nik }}</td>
 										<td>{{ $s->nip }}</td>
 										<td>{{ $s->notlp }}</td>
-										<td>{{ $s->jabatan }}</td>
+										<td>{{ $s->katejabatan->nama }}</td>
 										<td>{{ $s->email }}</td>
 										<td>{{ $s->alamat }}</td>
 										<td>

@@ -5,9 +5,16 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Katejabatan;
 
 class User extends Authenticatable
 {
+
+    public function katejabatan()
+    {
+        return $this->belongsTo(Katejabatan::class, 'jabatan_id');
+    }
+
     use Notifiable;
 
     /**

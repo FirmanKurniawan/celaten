@@ -50,7 +50,11 @@ Route::group(['middleware' => 'master'], function(){
 			Route::post('/karyawan/edit', 'MasterController@process_editkaryawan')->name('process_editkaryawan');
 		});
 	});
-
+			Route::get('/master/katejabatan', 'KatejabatanController@index');
+	        Route::post('/master/katejabatan/add', 'KatejabatanController@add');
+	        Route::get('/master/katejabatan/edit/{id}', 'KatejabatanController@edit');
+	        Route::post('/master/katejabatan/update', 'KatejabatanController@update');
+	        Route::get('/master/katejabatan/delete/{id}', 'KatejabatanController@delete');
 
 
 

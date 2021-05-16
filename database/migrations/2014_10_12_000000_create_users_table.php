@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->bigInteger('nip')->unique();
             $table->string('alamat');
             $table->bigInteger('notlp');
-            $table->string('jabatan');
+            $table->bigInteger('jabatan_id')->unsigned();
             $table->string('role');
             $table->string('status')->default('Kosong');
             $table->string('foto')->nullable();
@@ -29,6 +29,9 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
+
+
+            $table->foreign("jabatan_id")->references("id")->on("katejabatans")->onUpdate("cascade")->onDelete("cascade");
         });
     }
 

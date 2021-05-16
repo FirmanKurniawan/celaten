@@ -74,9 +74,15 @@
 										<i class="fas fa-user"></i>
 									</div>
 								</div>
-								<select class="form-control" name="jabatan" required>
+								<select class="form-control" name="jabatan_id" required>
 									<option selected>Silakan Pilih</option>
-									<option value="karyawan">Karyawan</option>
+									<?php 
+										use App\Katejabatan;
+										$katejabatan = Katejabatan::where('role',3)->get();
+									 ?>
+									@foreach($katejabatan as $j)
+									<option value="{{$j->id}}">{{$j->nama}}</option>
+									@endforeach
 								</select>
 							</div>
 						</div>
