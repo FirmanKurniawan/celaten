@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!-- saved from url=(0044)http://siakad.trilogi.ac.id/gate/menu#siakad -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -84,12 +83,12 @@
 
                             <div class="form-group">
                                 <i class="fa fa-user icon-input"></i> 
-                                <input type="text" name="name" id="userid" class="form-control input-line" placeholder="Masukan Username Atau Email">
+                                <input type="email" name="email" id="userid" class="form-control input-line" placeholder="Masukan Email" required>
                             </div>
                             <div class="form-group">
                                 <div class="password">
                                     <i style="margin-left:-20px;" class="fa fa-key icon-input"></i>
-                                    <input type="password" id="password" name="password" class="form-control input-line" placeholder="Masukkan Kata Sandi">
+                                    <input type="password" id="password" name="password" class="form-control input-line" placeholder="Masukkan Kata Sandi" required>
                                     <span id="iconshow" name="iconshow" onclick="showPass()" class="showbtn fa fa-eye-slash"></span>
                                 </div>
                             </div>       

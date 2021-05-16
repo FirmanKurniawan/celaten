@@ -19,7 +19,7 @@
 									</div>
 								</div>
 								<input type="text" class="form-control phone-number" name="name" placeholder="Nama Lengkap" required>
-								<input type="hidden" class="form-control phone-number" name="role" value="kepsek" required>
+								<input type="hidden" class="form-control phone-number" name="role" value="1" required>
 							</div>
 						</div>
 						<div class="form-group">
