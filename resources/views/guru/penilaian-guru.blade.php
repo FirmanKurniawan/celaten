@@ -15,11 +15,11 @@
 							<label>Foto Guru</label>
 							<center>
 							<div class="form-group">
-								<img src="{{url('foto/kepsek/2021.png')}}" alt="Nature" class="responsive" id="blah1" style="width: 300px;height: 300px; margin-left: 20px; border-radius: 50%;">
+								<img src="{{url('foto/guru/'.$user->foto)}}" alt="Nature" class="responsive" id="blah1" style="width: 300px;height: 300px; margin-left: 20px; border-radius: 50%;">
 							</div>
 							</center>
 						<div class="form-group">
-							<label>Apakah anda mengenal guru ini?</label>
+							<label>Apakah anda mengenal guru {{$user->name}} ?</label>
 							<div class="input-group">
 								<div class="input-group-prepend">
 									<div class="input-group-text">

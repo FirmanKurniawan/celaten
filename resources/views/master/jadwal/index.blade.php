@@ -11,10 +11,15 @@
 						<h4><b>Guru</b></h4>
 					</div> -->
 					<div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
-				      <h6 class="m-0 font-weight-bold"><strong>Data Guru</strong></h6>
-				        <a href="{{asset('master/guru/add')}}">
+				      <h6 class="m-0 font-weight-bold"><strong>Jadwal</strong></h6>
+				        <a href="{{asset('master/jadwal/add/guru')}}">
 				      <button h class="btn btn-outline-primary">
-				          <i class="fas fa-plus"></i>
+				          <i class="fas fa-plus"> Guru</i>
+				      </button>
+				        </a>
+				        <a href="{{asset('master/jadwal/add/karyawan')}}">
+				      <button h class="btn btn-outline-primary">
+				          <i class="fas fa-plus"> Karyawan</i>
 				      </button>
 				        </a>
 				    </div>
@@ -36,34 +41,24 @@
 									</tr>
 								</thead>
 								<tbody>
-									@foreach($gurus as $s)
 									<tr>
-										<td>{{ $loop->iteration }}</td>
-										<td>{{ $s->name }}</td>
-										<td>{{ $s->nik }}</td>
-										<td>{{ $s->nip }}</td>
-										<td>{{ $s->notlp }}</td>
-										<td>{{ $s->katejabatan->nama }}</td>
-										<td>{{ $s->email }}</td>
-										<td>{{ $s->alamat }}</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
 										<td>
-											@if(!empty($s->foto))
-							                <img src="{{ asset('foto/guru/'.$s->foto) }}" style="width: 50px;height: 50px;" class="img-mini">
-							                @else
-							                <img src="{{ asset('stisla/images/avatar.png') }}" style="width: 50px;height: 50px;" class="img-mini">
-							                @endif
-							                &nbsp;				
-										</td>
-										<td>
-											<a href="/master/guru/edit/{{$s->id}}" class="btn btn-outline-warning">
+											<a href="/master/guru/edit/" class="btn btn-outline-warning">
 							                  <i class="far fa-edit"></i>
 							                </a>
-							                <a href="/master/guru/delete/{{$s->id}}" class="btn btn-outline-danger">
+							                <a href="/master/guru/delete/" class="btn btn-outline-danger">
 							                  <i class="far fa-trash-alt"></i>
 							                </a>
             							</td>
 									</tr>
-									@endforeach
 								</tbody>
 							</table>
 							

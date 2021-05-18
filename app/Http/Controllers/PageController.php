@@ -15,7 +15,7 @@ class PageController extends Controller
     public function proses_login(Request $r){
     	if (Auth::attempt(['email' => $r->email, 'password' => $r->password])){
     		if (Auth::user()->role == "1"){
-    			return redirect('/kepalasekolah/index');
+    			return redirect('/kepsek/');
     		}
             if (Auth::user()->role == "2"){
     			return view('/kepsek/index');

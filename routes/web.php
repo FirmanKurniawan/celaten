@@ -11,8 +11,8 @@
 |
 */
 
+Route::get('/', 'PageController@login');
 Route::prefix('login')->group(function(){
-    Route::get('/', 'PageController@login');
     Route::get('/register', 'PageController@register');
     Route::post('/proses-login', 'PageController@proses_login');
     Route::post('/proses-register', 'PageController@proses_register');
@@ -86,6 +86,14 @@ Route::prefix('master')->group(function() {
 
 	Route::get('pertanyaan', 'PertanyaanController@index');
 	Route::post('pertanyaan', 'PertanyaanController@process_pertanyaan');
+
+
+	Route::get('jadwal', 'JadwalController@index');
+	Route::get('jadwal/add/guru', 'JadwalController@add_guru');
+	Route::get('jadwal/add/karyawan', 'JadwalController@add_karyawan');
+
+	Route::post('jadwal/add/guru', 'JadwalController@process_add_guru');
+	Route::post('jadwal/add/karyawan', 'JadwalController@process_add_karyawan');
 });
 
 Route::get('kepsek', 'KepsekController@dashboard');

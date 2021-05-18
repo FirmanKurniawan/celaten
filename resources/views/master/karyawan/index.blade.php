@@ -50,7 +50,7 @@
 											@if(!empty($s->foto))
 							                <img src="{{ asset('foto/karyawan/'.$s->foto) }}"style="width: 50px;height: 50px;" class="img-mini">
 							                @else
-							                <img src="{{ asset('stisla/images/avatar.png') }}" class="img-mini">
+							                <img src="{{ asset('stisla/images/avatar.png') }}" style="width: 50px;height: 50px;" class="img-mini">
 							                @endif
 							                &nbsp;				
 										</td>

@@ -72,4 +72,11 @@
         );
     </script>
 @endif
+@if (session('expired'))
+    <script>
+        $(document).ready(
+            swal('Mohon maaf waktu penilaian sudah habis!', 'Silakan klik tombol ok!', 'error')
+        );
+    </script>
+@endif
 @endsection

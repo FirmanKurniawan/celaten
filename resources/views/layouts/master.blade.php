@@ -271,7 +271,7 @@
             </li>
             <li><a class="nav-link" href="{{asset('master/katejabatan')}}"><i class="far fa-square"></i> <span>Kategori Jabatan</span></a></li>     
             <li><a class="nav-link" href="{{asset('master/pertanyaan')}}"><i class="far fa-square"></i> <span>Membuat Pertanyaan</span></a></li>     
-            <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Jadwal Penilaian</span></a></li>     
+            <li><a class="nav-link" href="{{asset('master/jadwal')}}"><i class="far fa-square"></i> <span>Jadwal Penilaian</span></a></li>     
           </ul>
 
           <div class="mt-4 mb-4 p-3 hide-sidebar-mini">

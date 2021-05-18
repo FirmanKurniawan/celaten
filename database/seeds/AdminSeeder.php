@@ -50,12 +50,21 @@ class AdminSeeder extends Seeder
         	],
         ]);
 
+        DB::table('users')->insert([
+            'name' => 'Master',
+            'nik' => '000',
+            'nip' => '000',
+            'alamat' => 'xxx',
+            'notlp' => 62000,
+            'jabatan_id' => '1',
+            'role' => '1',
+            'status' => '',
+            'foto' => '',
+            'email' => 'master@master.com',
+            'password' => Bcrypt('master')
+        ]);
+
         DB::table('pertanyaans')->insert([
-            [
-                'pertanyaan' => 'Apakah anda mengenal',
-                'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => date("Y-m-d H:i:s")
-            ],
             [
                 'pertanyaan' => 'Seberapa baikkah A dalam menyampaikan informasi atau pendapat dengan jelas/mudah dimengerti, lengkap , singkat dan tepat',
                 'created_at' => date("Y-m-d H:i:s"),
