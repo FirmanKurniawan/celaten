@@ -262,16 +262,16 @@
             
             <li class="menu-header">Starter</li>
             <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Tambah User</span></a>
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-user"></i> <span>Tambah User</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="{{asset('master/kepalasekolah')}}">Tambah Kepala Sekolah</a></li>
                 <li><a class="nav-link" href="{{asset('master/guru')}}">Tambah Guru</a></li>
                 <li><a class="nav-link" href="{{asset('master/karyawan')}}">Tambah Karyawan</a></li>
               </ul>
             </li>
-            <li><a class="nav-link" href="{{asset('master/katejabatan')}}"><i class="far fa-square"></i> <span>Kategori Jabatan</span></a></li>     
-            <li><a class="nav-link" href="{{asset('master/pertanyaan')}}"><i class="far fa-square"></i> <span>Membuat Pertanyaan</span></a></li>     
-            <li><a class="nav-link" href="{{asset('master/jadwal')}}"><i class="far fa-square"></i> <span>Jadwal Penilaian</span></a></li>     
+            <li><a class="nav-link" href="{{asset('master/katejabatan')}}"><i class="far fa-address-card"></i> <span>Kategori Jabatan</span></a></li>     
+            <li><a class="nav-link" href="{{asset('master/pertanyaan')}}"><i class="far fa-question-circle"></i> <span>Membuat Pertanyaan</span></a></li>     
+            <li><a class="nav-link" href="{{asset('master/jadwal')}}"><i class="far fa-calendar-check"></i> <span>Jadwal Penilaian</span></a></li>     
           </ul>
 
           <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
