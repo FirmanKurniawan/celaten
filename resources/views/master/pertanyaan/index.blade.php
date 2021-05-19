@@ -51,7 +51,7 @@
 									@foreach($pertanyaans as $s)
 									<tr>
 										<td>{{ $loop->iteration }}</td>
-										<td>{{ $s->pertanyaan }}</td>
+										<td>{{ Str::limit($s->pertanyaan, 90) }}</td>
 										<td>
 											<a data-toggle="modal" data-target="#Editpertanyaan{{$s->id}}" class="btn btn-outline-warning">
 							                  <i class="far fa-edit"></i>

@@ -30,26 +30,23 @@
 									<tr>
 										<th>No</th>
 										<th>Nama</th>
-										<th>NIK</th>
-										<th>NIP</th>
-										<th>Nomor Telepon</th>
-										<th>Jabatan</th>
-										<th>Email</th>
-										<th>Alamat</th>
-										<th>Foto</th>
+										<th>Tahun Akademik</th>
+										<th>Tanggal Mulai</th>
+										<th>Tanggal Selesai</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
+										@foreach($jadwals as $jadwal)
+										@php
+											$user = \App\User::where('id', $jadwal->user_id)->first();
+										@endphp
+										<td>{{$loop->iteration}}</td>
+										<td>{{$user->name}}</td>
+										<td>{{$jadwal->tahun_akademik_id}}</td>
+										<td>{{$jadwal->tgl_awal_isi}}</td>
+										<td>{{$jadwal->tgl_akhir_isi}}</td>
 										<td>
 											<a href="/master/guru/edit/" class="btn btn-outline-warning">
 							                  <i class="far fa-edit"></i>
@@ -58,6 +55,7 @@
 							                  <i class="far fa-trash-alt"></i>
 							                </a>
             							</td>
+            							@endforeach
 									</tr>
 								</tbody>
 							</table>

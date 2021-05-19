@@ -9,7 +9,8 @@ use \App\Jadwal;
 class JadwalController extends Controller
 {
     public function index(){
-    	return view('master.jadwal.index');
+        $jadwals = Jadwal::all();
+    	return view('master.jadwal.index', compact('jadwals'));
     }
 
     public function add_guru(){
