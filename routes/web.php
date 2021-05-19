@@ -86,6 +86,9 @@ Route::prefix('master')->group(function() {
 
 	Route::get('pertanyaan', 'PertanyaanController@index');
 	Route::post('pertanyaan', 'PertanyaanController@process_pertanyaan');
+	Route::get('/pertanyaan/delete/{id}', 'PertanyaanController@deletepertanyaan');
+	Route::get('/pertanyaan/edit/{id}/', 'PertanyaanController@editpertanyaan');
+	Route::post('/pertanyaan/update', 'PertanyaanController@update');
 
 
 	Route::get('jadwal', 'JadwalController@index');

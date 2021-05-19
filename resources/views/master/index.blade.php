@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+       
 
         <section class="section">
           <div class="row">
@@ -14,10 +15,13 @@
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>Total Orders</h4>
+                    <h4>Total Kepala sekolah dan wakil</h4>
                   </div>
                   <div class="card-body">
-                    59
+                    <?php  
+                        $total_kepsek = \App\User::where('role',1)->count();
+                     ?>
+                    {{$total_kepsek}}
                   </div>
                 </div>
               </div>
@@ -33,10 +37,13 @@
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>Total Orders</h4>
+                    <h4>Total Guru</h4>
                   </div>
                   <div class="card-body">
-                    59
+                    <?php  
+                        $total_guru = \App\User::where('role',2)->count();
+                     ?>
+                    {{$total_guru}}
                   </div>
                 </div>
               </div>
@@ -52,10 +59,13 @@
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>Total Orders</h4>
+                    <h4>Total karyawan</h4>
                   </div>
                   <div class="card-body">
-                    59
+                    <?php  
+                        $total_karyawan = \App\User::where('role',3)->count();
+                     ?>
+                    {{$total_karyawan}}
                   </div>
                 </div>
               </div>
