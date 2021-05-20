@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\User;
 use \App\Jadwal;
+use DB;
 
 class JadwalController extends Controller
 {
@@ -24,12 +25,23 @@ class JadwalController extends Controller
     }
 
     public function process_add_guru(Request $request){
-    	Jadwal::create($request->all());
+        $cek = Jadwal::where('id', 1)->first();
+        if($cek){
+            $cek->update($request->all());
+            DB::table('users')->update(array('status' => "Kosong"));    
+        }else{
+            Jadwal::create($request->all());
+        }
     	return redirect()->back();
     }
 
     public function process_add_karyawan(Request $request){
-    	Jadwal::create($request->all());
-    	return redirect()->back();
+    	$cek = Jadwal::where('id', 2)->first();
+        if($cek){
+            $cek->update($request->all());    
+        }else{
+            Jadwal::create($request->all());
+        }
+        return redirect()->back();
     }
 }

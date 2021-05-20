@@ -9,7 +9,8 @@ use \App\Penilaian;
 class KepsekController extends Controller
 {
     public function dashboard(){
-    	return view('kepsek.dashboard');
+    	$penilaians = Penilaian::all();
+    	return view('kepsek.dashboard', compact('penilaians'));
     }
 
     public function penilaian_karyawan(){

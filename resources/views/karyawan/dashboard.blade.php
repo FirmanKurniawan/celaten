@@ -62,3 +62,27 @@
           </div>
         </section>
 @endsection
+@section('js')
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@if (session('success'))
+    <script>
+        $(document).ready(
+            swal('Selamat anda telah mengisi penilaian', 'Silakan klik tombol ok!', 'success')
+        );
+    </script>
+@endif
+@if (session('expired'))
+    <script>
+        $(document).ready(
+            swal('Mohon maaf waktu penilaian sudah habis!', 'Silakan klik tombol ok!', 'error')
+        );
+    </script>
+@endif
+@if (session('isi'))
+    <script>
+        $(document).ready(
+            swal('Mohon maaf anda telah mengisi penilaian!', 'Silakan klik tombol ok!', 'error')
+        );
+    </script>
+@endif
+@endsection

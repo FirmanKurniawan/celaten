@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePenilaiansTable extends Migration
+class CreateRekapNilaisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreatePenilaiansTable extends Migration
      */
     public function up()
     {
-        Schema::create('penilaians', function (Blueprint $table) {
+        Schema::create('rekap_nilais', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('userid');
             $table->string('target');
+            $table->string('pertanyaanid');
+            $table->integer('bobot');
             $table->string('tanggal');
-            $table->bigInteger('bobot');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreatePenilaiansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('penilaians');
+        Schema::dropIfExists('rekap_nilais');
     }
 }

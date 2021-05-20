@@ -37,11 +37,12 @@
 									</tr>
 								</thead>
 								<tbody>
+									@foreach($jadwals as $jadwal)
+
+									@php
+										$user = \App\User::where('id', $jadwal->user_id)->first();
+									@endphp
 									<tr>
-										@foreach($jadwals as $jadwal)
-										@php
-											$user = \App\User::where('id', $jadwal->user_id)->first();
-										@endphp
 										<td>{{$loop->iteration}}</td>
 										<td>{{$user->name}}</td>
 										<td>{{$jadwal->tahun_akademik_id}}</td>
@@ -55,8 +56,8 @@
 							                  <i class="far fa-trash-alt"></i>
 							                </a>
             							</td>
-            							@endforeach
 									</tr>
+            						@endforeach
 								</tbody>
 							</table>
 							

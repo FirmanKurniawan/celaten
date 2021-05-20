@@ -7,9 +7,10 @@
 				<div class="card-header">
 					<h4>Penilaian Karyawan</h4>
 				</div>
-				<form action="/guru/penilaian-guru-lanjut" method="POST" enctype="multipart/form-data">
+				<form action="/karyawan/penilaian-karyawan-lanjut" method="POST" enctype="multipart/form-data">
 					@csrf
 					<div class="card-body">
+					<input type="hidden" name="target" value="{{$karyawan->user_id}}">
 					@foreach($pertanyaan as $key => $pertanyaans)
 						<div class="form-group">
 							<label>{{$pertanyaans->pertanyaan}}</label>

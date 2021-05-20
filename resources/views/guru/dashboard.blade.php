@@ -79,4 +79,11 @@
         );
     </script>
 @endif
+@if (session('isi'))
+    <script>
+        $(document).ready(
+            swal('Mohon maaf anda telah mengisi penilaian!', 'Silakan klik tombol ok!', 'error')
+        );
+    </script>
+@endif
 @endsection

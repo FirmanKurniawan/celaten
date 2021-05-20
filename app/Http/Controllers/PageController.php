@@ -15,16 +15,16 @@ class PageController extends Controller
     public function proses_login(Request $r){
     	if (Auth::attempt(['email' => $r->email, 'password' => $r->password])){
     		if (Auth::user()->role == "1"){
-    			return redirect('/kepsek/');
+    			return redirect('/master/');
     		}
             if (Auth::user()->role == "2"){
-    			return view('/kepsek/index');
+    			return redirect('/kepsek/');
     		}
     		if (Auth::user()->role == "3"){
-    			return view('/guru/index');
+    			return redirect('/guru/');
     		}
     		if (Auth::user()->role == "4"){
-    			return view('/karyawan/index');
+    			return redirect('/karyawan/');
     		}
             
     	}

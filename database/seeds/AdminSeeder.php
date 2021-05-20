@@ -51,17 +51,86 @@ class AdminSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Master',
-            'nik' => '000',
-            'nip' => '000',
-            'alamat' => 'xxx',
-            'notlp' => 62000,
-            'jabatan_id' => '1',
-            'role' => '1',
-            'status' => '',
-            'foto' => '',
-            'email' => 'master@master.com',
-            'password' => Bcrypt('master')
+            [
+                'name' => 'Master',
+                'nik' => '000',
+                'nip' => '000',
+                'alamat' => 'xxx',
+                'notlp' => 62000,
+                'jabatan_id' => '1',
+                'role' => '1',
+                'status' => '',
+                'foto' => '',
+                'email' => 'master@seeder.com',
+                'password' => Bcrypt('master'),
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => 'Kepala Sekolah',
+                'nik' => '0001',
+                'nip' => '0001',
+                'alamat' => 'xxx',
+                'notlp' => 620001,
+                'jabatan_id' => '1',
+                'role' => '2',
+                'status' => '',
+                'foto' => '',
+                'email' => 'kepsek@seeder.com',
+                'password' => Bcrypt('kepsek'),
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => 'Guru',
+                'nik' => '0002',
+                'nip' => '0002',
+                'alamat' => 'xxx',
+                'notlp' => 620002,
+                'jabatan_id' => '2',
+                'role' => '3',
+                'status' => '',
+                'foto' => '',
+                'email' => 'guru@seeder.com',
+                'password' => Bcrypt('guru'),
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => 'Karyawan',
+                'nik' => '0003',
+                'nip' => '0003',
+                'alamat' => 'xxx',
+                'notlp' => 620003,
+                'jabatan_id' => '3',
+                'role' => '4',
+                'status' => '',
+                'foto' => '',
+                'email' => 'karyawan@seeder.com',
+                'password' => Bcrypt('karyawan'),
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+        ]);
+
+        DB::table('jadwals')->insert([
+            [
+                'user_id' => 1,
+                'tahun_akademik_id' => 2019,
+                'tgl_awal_isi' => '2021-05-20',
+                'tgl_akhir_isi' => '2021-05-20',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            
+            [
+                'user_id' => 1,
+                'tahun_akademik_id' => 2019,
+                'tgl_awal_isi' => '2021-05-20',
+                'tgl_akhir_isi' => '2021-05-20',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]
         ]);
 
         DB::table('pertanyaans')->insert([
