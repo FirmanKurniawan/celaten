@@ -83,8 +83,13 @@ Route::group(['middleware' => 'auth'], function(){
 		Route::post('guru/penilaian-guru', 'GuruController@process_penilaian_guru');
 
 		Route::get('guru', 'GuruController@dashboard');
+
 		Route::get('guru/penilaian-guru-lanjut', 'GuruController@lanjut_penilaian_guru');
 		Route::post('guru/penilaian-guru-lanjut', 'GuruController@process_lanjut_penilaian_guru');
+
+		Route::get('guru/penilaian-diri', 'GuruController@lanjut_penilaian_guru');
+		Route::post('guru/penilaian-diri', 'GuruController@process_lanjut_penilaian_guru');
+
 		Route::get('guru/penilaian-guru', 'GuruController@penilaian_guru');
 		Route::post('guru/penilaian-guru', 'GuruController@process_penilaian_guru');
 	});
@@ -100,8 +105,12 @@ Route::group(['middleware' => 'auth'], function(){
 		Route::get('karyawan', 'karyawanController@dashboard');
 		Route::get('karyawan/penilaian-karyawan-lanjut', 'karyawanController@lanjut_penilaian_karyawan');
 		Route::post('karyawan/penilaian-karyawan-lanjut', 'KaryawanController@process_lanjut_penilaian_karyawan');
+
 		Route::get('karyawan/penilaian-karyawan', 'KaryawanController@penilaian_karyawan');
 		Route::post('karyawan/penilaian-karyawan', 'KaryawanController@process_penilaian_karyawan');
+
+		Route::get('karyawan/penilaian-diri', 'karyawanController@lanjut_penilaian_karyawan');
+		Route::post('karyawan/penilaian-diri', 'KaryawanController@process_lanjut_penilaian_karyawan');
 	});
 });
 

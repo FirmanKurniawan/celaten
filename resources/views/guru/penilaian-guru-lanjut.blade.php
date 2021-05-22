@@ -11,9 +11,22 @@
 					@csrf
 					<div class="card-body">
 						<input type="hidden" name="target" value="{{$guru->user_id}}">
+						@php
+			              $guru = \App\Jadwal::where('id', 1)->first();
+			            @endphp
+
 						@foreach($pertanyaan as $key => $pertanyaans)
 						<div class="form-group">
-							<label>{{$pertanyaans->pertanyaan}}</label>
+							@php
+								$nama = \App\User::find($guru->user_id);
+
+								if($guru->user_id != Auth::user()->id){
+									$replace = str_replace(" A ", " ".$nama->name." ", $pertanyaans->pertanyaan);
+								}else{
+									$replace = str_replace(" A ", " ".Auth::user()->name." ", $pertanyaans->pertanyaan);
+								}
+							@endphp
+							<label>{{$replace}}</label>
 							<input type="hidden" name="pertanyaanid[]" value="1">
 						</div>
 						

@@ -11,10 +11,10 @@
 					@csrf
 					<div class="card-body">
 						<div class="form-group">
-							<label>Foto Guru</label>
+							<label>Foto Karyawan</label>
 							<center>
 							<div class="form-group">
-								<img src="{{url('foto/kepsek/2021.png')}}" alt="Nature" class="responsive" id="blah1" style="width: 300px;height: 300px; margin-left: 20px; border-radius: 50%;">
+								<img src="{{url('foto/karyawan/'.$user->foto)}}" alt="Nature" class="responsive" id="blah1" style="width: 300px;height: 300px; margin-left: 20px; border-radius: 50%;">
 							</div>
 							</center>
 						<div class="form-group">

@@ -51,7 +51,7 @@ class KaryawanController extends Controller
             $penilaian->save();
 
             $isi = User::find(Auth::user()->id);
-            $isi->status = "isi";
+            $isi->status_penilaian = "isi";
             $isi->save();
 
             return redirect('karyawan/');
@@ -90,7 +90,7 @@ class KaryawanController extends Controller
             $penilaian->save();
 
             $isi = User::find(Auth::user()->id);
-            $isi->status = "isi";
+            $isi->status_penilaian = "isi";
             $isi->save();
         return redirect('karyawan')->with('success', 'Login Successfully!');
     }

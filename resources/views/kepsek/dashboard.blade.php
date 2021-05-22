@@ -73,8 +73,8 @@
                 <tbody>
                   @foreach($penilaians as $penilaian)
                   @php
-                    $penilai = \App\User::find($penilaian->userid)->first();
-                    $target = \App\User::find($penilaian->target)->first();
+                    $penilai = \App\User::find($penilaian->userid);
+                    $target = \App\User::find($penilaian->target);
                   @endphp
                   <tr>
                     <td>{{$loop->iteration}}</td>

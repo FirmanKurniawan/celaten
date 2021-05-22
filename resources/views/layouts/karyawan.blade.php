@@ -257,8 +257,18 @@
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Menu</li>
-            <li><a class="nav-link" href="{{url('karyawan/')}}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li> 
-            <li class=active><a class="nav-link" href="{{url('karyawan/penilaian-karyawan')}}"><i class="fas fa-fire"></i> <span>Penilaian Karyawan</span></a></li>    
+            <li><a class="nav-link" href="{{url('karyawan/')}}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
+            @php
+              $karyawan = \App\Jadwal::where('id', 2)->first();
+            @endphp
+
+            @if($karyawan->user_id != Auth::user()->id)
+            <li><a class="nav-link" href="{{url('karyawan/penilaian-karyawan')}}"><i class="fas fa-fire"></i> <span>Penilaian Karyawan</span></a></li>
+            @endif
+
+            @if($karyawan->user_id === Auth::user()->id)
+              <li><a class="nav-link" href="{{url('karyawan/penilaian-diri')}}"><i class="fas fa-fire"></i> <span>Penilaian Diri</span></a></li>
+            @endif
           </ul>
 
           <div class="mt-4 mb-4 p-3 hide-sidebar-mini">

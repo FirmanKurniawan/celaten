@@ -53,7 +53,7 @@ class GuruController extends Controller
             $penilaian->save();
 
             $isi = User::find(Auth::user()->id);
-            $isi->status = "isi";
+            $isi->status_penilaian = "isi";
             $isi->save();
             return redirect('guru/');
     	}elseif($request->pertanyaan1 == "1"){
@@ -92,7 +92,7 @@ class GuruController extends Controller
             $penilaian->save();
             
             $isi = User::find(Auth::user()->id);
-            $isi->status = "isi";
+            $isi->status_penilaian = "isi";
             $isi->save();
         return redirect('guru')->with('success', 'Login Successfully!');
     }
