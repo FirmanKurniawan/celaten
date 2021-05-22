@@ -16,7 +16,7 @@ class MasterController extends Controller
 
     public function indexguru(){
         $d['katejabatans'] = Katejabatan::all();
-        $d['gurus'] = User::where('role',2)->get();
+        $d['gurus'] = User::where('role',3)->get();
         return view('master.guru.index', $d);
     }
     public function addguru(){
@@ -75,7 +75,7 @@ class MasterController extends Controller
 
 
     public function indexkepsek(){
-    	$d['kelapasekolahs'] = User::where('role',1)->get();
+    	$d['kelapasekolahs'] = User::where('role',2)->get();
         return view('master.kepalasekolah.index', $d);
     }
     public function addkepsek(){
@@ -133,8 +133,8 @@ class MasterController extends Controller
 
 
     public function indexkaryawan(){
-        $a['katejabatan'] = Katejabatan::where('role',3)->get();
-        $a['karyawans'] = User::all();
+        $a['katejabatan'] = Katejabatan::all();
+        $a['karyawans'] = User::where('role',4)->get();
         return view('master.karyawan.index', $a);
     }
     public function addkaryawan(){
