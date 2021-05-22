@@ -50,7 +50,7 @@ Route::group(['middleware' => 'auth'], function(){
 			Route::get('/guru/add', 'MasterController@addguru');
 			Route::post('/guru/add', 'MasterController@process_addguru');
 			Route::get('/guru/edit/{id}/', 'MasterController@editguru');
-			Route::post('/guru/edit', 'MasterController@process_editguru')->name('process_editguru');
+			Route::post('/guru/edit', 'MasterController@process_editguru');
 			Route::get('/guru/delete/{id}', 'MasterController@deleteguru');
 
 

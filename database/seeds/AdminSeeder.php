@@ -14,37 +14,37 @@ class AdminSeeder extends Seeder
         DB::table('katejabatans')->insert([
         	[
                 'nama' => 'Kepala Sekolah',
-                'role' => 1,
+                'role' => 2,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
         	],
         	[
                 'nama' => 'Wakil Kepala Sekolah',
-                'role' => 1,
+                'role' => 2,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
         	],
         	[
                 'nama' => 'Kepala Program Studi',
-                'role' => 2,
+                'role' => 3,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
         	],
         	[
                 'nama' => 'Guru',
-                'role' => 2,
+                'role' => 3,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
         	],
         	[
                 'nama' => 'Tata Usaha',
-                'role' => 3,
+                'role' => 4,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
         	],
         	[
                 'nama' => 'Petugas Kebersihan',
-                'role' => 3,
+                'role' => 4,
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
         	],
@@ -82,12 +82,12 @@ class AdminSeeder extends Seeder
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'name' => 'Guru',
+                'name' => 'Heri Prasetyo',
                 'nik' => '0002',
                 'nip' => '0002',
                 'alamat' => 'xxx',
                 'notlp' => 620002,
-                'jabatan_id' => '2',
+                'jabatan_id' => '3',
                 'role' => '3',
                 'status_penilaian' => '',
                 'foto' => '',
@@ -97,16 +97,46 @@ class AdminSeeder extends Seeder
                 'updated_at' => date("Y-m-d H:i:s")
             ],
             [
-                'name' => 'Karyawan',
+                'name' => 'Aroh Celaten',
+                'nik' => '00022',
+                'nip' => '00022',
+                'alamat' => 'xxx',
+                'notlp' => 6200022,
+                'jabatan_id' => '4',
+                'role' => '3',
+                'status_penilaian' => '',
+                'foto' => '',
+                'email' => 'guru2@seeder.com',
+                'password' => Bcrypt('guru'),
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => 'Imadudin Prasetyo',
                 'nik' => '0003',
                 'nip' => '0003',
                 'alamat' => 'xxx',
-                'notlp' => 620003,
-                'jabatan_id' => '3',
+                'notlp' => 6200033,
+                'jabatan_id' => '5',
                 'role' => '4',
                 'status_penilaian' => '',
                 'foto' => '',
                 'email' => 'karyawan@seeder.com',
+                'password' => Bcrypt('karyawan'),
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => 'Abid Prasetyo',
+                'nik' => '00032',
+                'nip' => '00032',
+                'alamat' => 'xxx',
+                'notlp' => 620003,
+                'jabatan_id' => '6',
+                'role' => '4',
+                'status_penilaian' => '',
+                'foto' => '',
+                'email' => 'karyawan1@seeder.com',
                 'password' => Bcrypt('karyawan'),
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")

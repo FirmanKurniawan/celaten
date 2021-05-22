@@ -79,7 +79,7 @@
 									<option selected>Pilih Jabatan...</option>
 									<?php 
                                         use App\Katejabatan;
-                                        $katejabatans = Katejabatan::where('role',1)->get();
+                                        $katejabatans = Katejabatan::where('role',2)->get();
                                     ?>
 									@foreach($katejabatans as $j)
 									@if($j->id == $kepseks->jabatan_id)

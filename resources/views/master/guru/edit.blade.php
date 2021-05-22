@@ -7,7 +7,7 @@
 				<div class="card-header">
 					<h4>Edit Data Guru</h4>
 				</div>
-				<form action="{{route('process_editguru')}}" method="POST" enctype="multipart/form-data">
+				<form action="{{url('master/guru/edit')}}" method="POST" enctype="multipart/form-data">
 					@csrf
 					<div class="card-body">
 						<div class="form-group">
@@ -79,7 +79,7 @@
 									<option selected>Pilih Jabatan...</option>
 									<?php 
                                         use App\Katejabatan;
-                                        $katejabatans = Katejabatan::where('role',2)->get();
+                                        $katejabatans = Katejabatan::where('role',3)->get();
                                     ?>
 									@foreach($katejabatans as $j)
 									@if($j->id == $gurus->jabatan_id)

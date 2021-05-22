@@ -78,7 +78,7 @@
 									<option selected>Silakan Pilih</option>
 									<?php 
 										use App\Katejabatan;
-										$katejabatan = Katejabatan::where('role',1)->get();
+										$katejabatan = Katejabatan::where('role',2)->get();
 									 ?>
 									@foreach($katejabatan as $j)
 									<option value="{{$j->id}}">{{$j->nama}}</option>

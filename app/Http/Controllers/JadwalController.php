@@ -28,11 +28,11 @@ class JadwalController extends Controller
         $cek = Jadwal::where('id', 1)->first();
         if($cek){
             $cek->update($request->all());
-            DB::table('users')->update(array('status' => "Kosong"));    
+            DB::table('users')->update(array('status_penilaian' => "Kosong"));    
         }else{
             Jadwal::create($request->all());
         }
-    	return redirect()->back();
+    	return redirect('/master/jadwal');
     }
 
     public function process_add_karyawan(Request $request){
@@ -42,6 +42,6 @@ class JadwalController extends Controller
         }else{
             Jadwal::create($request->all());
         }
-        return redirect()->back();
+        return redirect('/master/jadwal');
     }
 }
