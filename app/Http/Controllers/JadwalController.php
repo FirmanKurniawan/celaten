@@ -15,12 +15,12 @@ class JadwalController extends Controller
     }
 
     public function add_guru(){
-    	$users = User::where('role', 2)->get();
+    	$users = User::where('role', 3)->get();
     	return view('master.jadwal.add-guru', compact('users'));
     }
 
     public function add_karyawan(){
-    	$users = User::where('role', 3)->get();
+    	$users = User::where('role', 4)->get();
     	return view('master.jadwal.add-karyawan', compact('users'));
     }
 
