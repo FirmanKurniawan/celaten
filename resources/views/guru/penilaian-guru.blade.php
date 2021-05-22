@@ -20,6 +20,7 @@
 							</center>
 						<div class="form-group">
 							<label>Apakah anda mengenal guru {{$user->name}} ?</label>
+							<input type="hidden" name="target" value="{{$guru->user_id}}">
 							<div class="input-group">
 								<div class="input-group-prepend">
 									<div class="input-group-text">

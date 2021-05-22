@@ -20,7 +20,7 @@ class KaryawanController extends Controller
         $karyawan = Jadwal::where('id', 2)->first();
     	if(date('Y-m-d') > $karyawan->tgl_akhir_isi){
             return redirect('karyawan')->with('expired', 'Login Successfully!');
-        }elseif(Auth::user()->status == "isi"){
+        }elseif(Auth::user()->status_penilaian == "isi"){
             return redirect('karyawan')->with('isi', 'Login Successfully!');
         }
         else{

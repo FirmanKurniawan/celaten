@@ -22,7 +22,7 @@ class GuruController extends Controller
         $guru = Jadwal::where('id', 1)->first();
         if(date('Y-m-d') > $guru->tgl_akhir_isi){
             return redirect('guru')->with('expired', 'Login Successfully!');
-        }elseif(Auth::user()->status == "isi"){
+        }elseif(Auth::user()->status_penilaian == "isi"){
             return redirect('guru')->with('isi', 'Login Successfully!');
         }
         else{

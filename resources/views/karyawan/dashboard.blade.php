@@ -85,4 +85,11 @@
         );
     </script>
 @endif
+@if (session('belum-isi'))
+    <script>
+        $(document).ready(
+            swal('Anda belum mengisi penilaian!', 'Silakan klik tombol ok!', 'error')
+        );
+    </script>
+@endif
 @endsection

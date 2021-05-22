@@ -21,10 +21,18 @@ class PageController extends Controller
     			return redirect('/kepsek/');
     		}
     		if (Auth::user()->role == "3"){
-    			return redirect('/guru/');
+                if(Auth::user()->status_penilaian !== "isi"){
+    			    return redirect('/guru/')->with('belum-isi', 'Login Successfully!');
+                }else{
+                    return redirect('/guru/');
+                }
     		}
     		if (Auth::user()->role == "4"){
-    			return redirect('/karyawan/');
+    			if(Auth::user()->status_penilaian !== "isi"){
+                    return redirect('/karyawan/')->with('belum-isi', 'Login Successfully!');
+                }else{
+                    return redirect('/karyawan/');
+                }
     		}
             
     	}

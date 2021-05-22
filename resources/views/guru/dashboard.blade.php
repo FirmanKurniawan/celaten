@@ -1,5 +1,4 @@
 @extends('layouts.guru')
-@section('status1') active @endsection
 @section('content')
 <section class="section">
           <div class="row">
@@ -83,6 +82,13 @@
     <script>
         $(document).ready(
             swal('Mohon maaf anda telah mengisi penilaian!', 'Silakan klik tombol ok!', 'error')
+        );
+    </script>
+@endif
+@if (session('belum-isi'))
+    <script>
+        $(document).ready(
+            swal('Anda belum mengisi penilaian!', 'Silakan klik tombol ok!', 'error')
         );
     </script>
 @endif

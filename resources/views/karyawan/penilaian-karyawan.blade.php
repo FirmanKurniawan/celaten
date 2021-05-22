@@ -19,6 +19,7 @@
 							</center>
 						<div class="form-group">
 							<label>Apakah anda mengenal karyawan ini?</label>
+							<input type="hidden" name="target" value="{{$karyawan->user_id}}">
 							<div class="input-group">
 								<div class="input-group-prepend">
 									<div class="input-group-text">
