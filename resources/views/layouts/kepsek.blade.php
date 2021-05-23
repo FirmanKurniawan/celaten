@@ -243,7 +243,7 @@
                 <i class="fas fa-cog"></i> Settings
               </a>
               <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item has-icon text-danger">
+              <a href="logout" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout
               </a>
             </div>
@@ -260,7 +260,8 @@
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Menu</li>
-            <li><a class="nav-link" href="{{url('kepsek/')}}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>    
+            <li><a class="nav-link" href="{{url('kepsek/')}}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
+            <li><a class="nav-link" href="{{url('kepsek/profile')}}"><i class="fas fa-fire"></i> <span>Profile</span></a></li>
           </ul>
 
           <div class="mt-4 mb-4 p-3 hide-sidebar-mini">

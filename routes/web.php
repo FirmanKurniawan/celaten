@@ -11,6 +11,12 @@
 |
 */
 
+Route::get('/profile', function () {
+    return view('master.guru.profile');
+});
+
+
+
 // Auth::routes();
 Route::get('login', 'PageController@login')->name('login');
 Route::get('logout', 'PageController@logout')->name('logout');
@@ -65,6 +71,9 @@ Route::group(['middleware' => 'auth'], function(){
 
 	Route::group(['middleware' => 'kepsek'], function(){
 		Route::get('kepsek', 'KepsekController@dashboard');
+
+		Route::get('/kepsek/profile', 'ProfileController@index_kepsek');
+    	Route::post('/kepsek/update_kepsek', 'ProfileController@update_kepsek');
 	});
 
 	Route::group(['middleware' => 'guru'], function(){
@@ -92,6 +101,11 @@ Route::group(['middleware' => 'auth'], function(){
 
 		Route::get('guru/penilaian-guru', 'GuruController@penilaian_guru');
 		Route::post('guru/penilaian-guru', 'GuruController@process_penilaian_guru');
+		
+		Route::get('/guru/profile', 'ProfileController@index');
+    	Route::post('/guru/update', 'ProfileController@update');
+
+
 	});
 
 	Route::group(['middleware' => 'karyawan'], function(){
@@ -111,6 +125,10 @@ Route::group(['middleware' => 'auth'], function(){
 
 		Route::get('karyawan/penilaian-diri', 'karyawanController@lanjut_penilaian_karyawan');
 		Route::post('karyawan/penilaian-diri', 'KaryawanController@process_lanjut_penilaian_karyawan');
+
+
+		Route::get('/karyawan/profile', 'ProfileController@index_karyawan');
+    	Route::post('/karyawan/update_karyawan', 'ProfileController@update_karyawan');
 	});
 });
 
