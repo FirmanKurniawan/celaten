@@ -25,8 +25,15 @@ class MasterController extends Controller
     }
 
     public function process_addguru(Request $request){
-        $id = User::create($request->except('foto', 'password'));
-        $user = User::find($id->id);
+        $user = new User;
+        $user->name = $request->name;
+        $user->nik = $request->nik;
+        $user->nip = $request->nip;
+        $user->alamat = $request->alamat;
+        $user->notlp = $request->notlp;
+        $user->jabatan_id = $request->jabatan_id;
+        $user->email = $request->email;
+        $user->role = '3';
         $user->password = Bcrypt($request->password);
 
         if($request->hasFile('foto')){
@@ -83,8 +90,15 @@ class MasterController extends Controller
     }
 
     public function process_addkepsek(Request $request){
-        $id = User::create($request->except('foto', 'password'));
-        $user = User::find($id->id);
+        $user = new User;
+        $user->name = $request->name;
+        $user->nik = $request->nik;
+        $user->nip = $request->nip;
+        $user->alamat = $request->alamat;
+        $user->notlp = $request->notlp;
+        $user->jabatan_id = $request->jabatan_id;
+        $user->email = $request->email;
+        $user->role = '2';
         $user->password = Bcrypt($request->password);
 
         if($request->hasFile('foto')){
@@ -142,8 +156,15 @@ class MasterController extends Controller
     }
 
     public function process_addkaryawan(Request $request){
-        $id = User::create($request->except('foto', 'password'));
-        $user = User::find($id->id);
+        $user = new User;
+        $user->name = $request->name;
+        $user->nik = $request->nik;
+        $user->nip = $request->nip;
+        $user->alamat = $request->alamat;
+        $user->notlp = $request->notlp;
+        $user->jabatan_id = $request->jabatan_id;
+        $user->email = $request->email;
+        $user->role = '4';
         $user->password = Bcrypt($request->password);
 
         if($request->hasFile('foto')){

@@ -33,7 +33,6 @@
 										<th>Tahun Akademik</th>
 										<th>Tanggal Mulai</th>
 										<th>Tanggal Selesai</th>
-										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -48,14 +47,6 @@
 										<td>{{$jadwal->tahun_akademik_id}}</td>
 										<td>{{$jadwal->tgl_awal_isi}}</td>
 										<td>{{$jadwal->tgl_akhir_isi}}</td>
-										<td>
-											<a href="/master/guru/edit/" class="btn btn-outline-warning">
-							                  <i class="far fa-edit"></i>
-							                </a>
-							                <a href="/master/guru/delete/" class="btn btn-outline-danger">
-							                  <i class="far fa-trash-alt"></i>
-							                </a>
-            							</td>
 									</tr>
             						@endforeach
 								</tbody>
