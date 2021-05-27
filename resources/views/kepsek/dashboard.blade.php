@@ -2,59 +2,46 @@
 @section('content')
 <section class="section">
           <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="card card-statistic-2">
                 <div class="card-stats">
                   <div class="card-stats-items">
                   </div>
                 </div>
                 <div class="card-icon shadow-primary bg-primary">
-                  <i class="fas fa-archive"></i>
+                  <i class="fas fa-user"></i>
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>Total Orders</h4>
+                    <h4>Total Guru Dan Kaprok</h4>
                   </div>
                   <div class="card-body">
-                    59
+                    <?php  
+                        $total_guru = \App\User::where('role',3)->count();
+                     ?>
+                    {{$total_guru}}
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="card card-statistic-2">
                 <div class="card-stats">
                   <div class="card-stats-items">
                   </div>
                 </div>
                 <div class="card-icon shadow-primary bg-primary">
-                  <i class="fas fa-archive"></i>
+                  <i class="fas fa-user-circle"></i>
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>Total Orders</h4>
+                    <h4>Total Karyawan</h4>
                   </div>
                   <div class="card-body">
-                    59
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-              <div class="card card-statistic-2">
-                <div class="card-stats">
-                  <div class="card-stats-items">
-                  </div>
-                </div>
-                <div class="card-icon shadow-primary bg-primary">
-                  <i class="fas fa-archive"></i>
-                </div>
-                <div class="card-wrap">
-                  <div class="card-header">
-                    <h4>Total Orders</h4>
-                  </div>
-                  <div class="card-body">
-                    59
+                    <?php  
+                        $total_karyawan = \App\User::where('role',4)->count();
+                     ?>
+                    {{$total_karyawan}}
                   </div>
                 </div>
               </div>

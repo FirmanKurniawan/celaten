@@ -8,6 +8,7 @@
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{asset('stisla/dist/assets/modules/bootstrap/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('stisla/dist/assets/modules/fontawesome/css/all.min.css')}}">
+  <link rel="stylesheet" href="{{asset('stisla/dist/assets/css/skins/customDataTable.css')}}">
 
   <!-- CSS Libraries -->
   @yield('css')
