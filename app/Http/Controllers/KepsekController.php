@@ -11,7 +11,7 @@ use \App\User;
 class KepsekController extends Controller
 {
     public function dashboard(){
-    	$penilaians = Penilaian::all();
+    	$penilaians = PenilaianGuru::all();
     	return view('kepsek.dashboard', compact('penilaians'));
     }
 

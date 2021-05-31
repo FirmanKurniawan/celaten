@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Pertanyaan;
 use \App\Jadwal;
-use \App\Penilaian;
 use \App\PenilaianKaryawan;
 use \App\RekapNilai;
 use \App\User;

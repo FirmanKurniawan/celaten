@@ -46,7 +46,7 @@
                 </div>
               </div>
             </div>
-            <div class="table-responsive">
+            {{-- <div class="table-responsive">
               <table id="example" class="display nowrap" style="width:100%">
                 <thead>
                   <tr>
@@ -74,7 +74,7 @@
                 </tbody>
               </table>
               
-            </div>
+            </div> --}}
           </div>
         </section>
 @endsection
