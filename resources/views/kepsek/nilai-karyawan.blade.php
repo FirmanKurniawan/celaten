@@ -2,7 +2,7 @@
 @section('content')
 <section class="section">
           <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-4 col-sm-12">
               <div class="card card-statistic-2">
                 <div class="card-stats">
                   <div class="card-stats-items">
@@ -24,7 +24,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-4 col-sm-12">
               <div class="card card-statistic-2">
                 <div class="card-stats">
                   <div class="card-stats-items">
@@ -42,6 +42,28 @@
                         $total_karyawan = \App\User::where('role',4)->count();
                      ?>
                     {{$total_karyawan}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="card card-statistic-2">
+                <div class="card-stats">
+                  <div class="card-stats-items">
+                  </div>
+                </div>
+                <div class="card-icon shadow-primary bg-primary">
+                  <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="card-wrap">
+                  <div class="card-header">
+                    <h4>Total Bobot</h4>
+                  </div>
+                  <div class="card-body">
+                    @php  
+                      $bobot = \App\PenilaianKaryawan::all()->sum('bobot');
+                    @endphp
+                    {{$bobot}}
                   </div>
                 </div>
               </div>
