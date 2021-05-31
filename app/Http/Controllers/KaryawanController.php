@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use \App\Pertanyaan;
 use \App\Jadwal;
 use \App\Penilaian;
+use \App\PenilaianKaryawan;
 use \App\RekapNilai;
 use \App\User;
 use Auth;
@@ -42,7 +43,7 @@ class KaryawanController extends Controller
 
             $bobot = RekapNilai::where('userid', Auth::user()->id)->where('tanggal', date('Y-m-d'))->sum('bobot');
             
-            $penilaian = new Penilaian;
+            $penilaian = new PenilaianKaryawan;
             $penilaian->userid = Auth::user()->id;
             $penilaian->target = $request->target;
             $penilaian->tanggal = date('Y-m-d');
@@ -81,7 +82,7 @@ class KaryawanController extends Controller
         }
             $bobot = RekapNilai::where('userid', Auth::user()->id)->where('tanggal', date('Y-m-d'))->sum('bobot');
 
-            $penilaian = new Penilaian;
+            $penilaian = new PenilaianKaryawan;
             $penilaian->userid = Auth::user()->id;
             $penilaian->target = $request->target;
             $penilaian->tanggal = date('Y-m-d');

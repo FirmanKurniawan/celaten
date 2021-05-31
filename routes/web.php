@@ -72,6 +72,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::group(['middleware' => 'kepsek'], function(){
 		Route::get('kepsek', 'KepsekController@dashboard');
 
+		Route::get('/kepsek/nilai/{role}', 'KepsekController@hasil_nilai');
+
 		Route::get('/kepsek/profile', 'ProfileController@index_kepsek');
     	Route::post('/kepsek/update_kepsek', 'ProfileController@update_kepsek');
 	});
