@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
-
+use RealRashid\SweetAlert\Facades\Alert;
 class PageController extends Controller
 {
     public function login()
@@ -36,7 +36,7 @@ class PageController extends Controller
     		}
             
     	}
-    		return redirect('/not_found/404.jpg');
+    		return redirect('/login')->with('salah', 'Login Successfully!');
     }
     
     public function logout(Request $request)

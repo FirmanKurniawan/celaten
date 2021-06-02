@@ -7,7 +7,7 @@
 				<div class="card-header">
 					<h4>Tambah Jadwal</h4>
 				</div>
-				<form action="/master/jadwal/add/guru" method="POST" enctype="multipart/form-data">
+				<form action="/master/jadwal/add/karyawan" method="POST" enctype="multipart/form-data">
 					@csrf
 					<div class="card-body">
 						<div class="form-group">

@@ -57,11 +57,11 @@
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>Total Bobot</h4>
+                    <h4>Total Bobot Jadwal Sekarang</h4>
                   </div>
                   <div class="card-body">
                     @php  
-                      $bobot = \App\PenilaianGuru::all()->sum('bobot');
+                      $bobot = \App\PenilaianGuru::where('target', $jadwal_guru->user_id)->sum('bobot');
                     @endphp
                     {{$bobot}}
                   </div>
@@ -75,7 +75,7 @@
                     <th>No</th>
                     <th>Target</th>
                     <th>Penilai</th>
-                    <th>Total Bobot</th>
+                    <th>Bobot</th>
                     <th>Tanggal</th>
                   </tr>
                 </thead>
@@ -84,11 +84,12 @@
                   @php
                     $penilai = \App\User::find($penilaian->userid);
                     $target = \App\User::find($penilaian->target);
+                    $bobot1 = \App\PenilaianGuru::where('target', $penilaian->target)->sum('bobot');
                   @endphp
                   <tr>
                     @if($penilai->role == 3)
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$target->name}}</td>
+                    <td>{{$target->name}} - (Total {{$bobot1}})</td>
                     <td>{{$penilai->name}}</td>
                     <td>{{$penilaian->bobot}}</td>
                     <td>{{$penilaian->tanggal}}</td>

@@ -25,7 +25,7 @@ class JadwalController extends Controller
     }
 
     public function process_add_guru(Request $request){
-        $cek = Jadwal::where('id', 1)->first();
+        $cek = Jadwal::where('tipe', "guru")->first();
         if($cek){
             $cek->update($request->all());
             DB::table('users')->update(array('status_penilaian' => "Kosong"));    
@@ -36,7 +36,7 @@ class JadwalController extends Controller
     }
 
     public function process_add_karyawan(Request $request){
-    	$cek = Jadwal::where('id', 2)->first();
+    	$cek = Jadwal::where('tipe', "karyawan")->first();
         if($cek){
             $cek->update($request->all());    
         }else{

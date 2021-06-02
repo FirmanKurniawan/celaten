@@ -78,6 +78,9 @@
                     <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12 form-login" align="center">
                         <img src="templatelogin/login/logosmk.png" class="logo"><br>
                         <h2 align="center" class="text-grey text-light">Silakan Login</h2><br>
+                        @if (session('salah'))
+                        <h3 align="center" class="text-grey text-light" style="color: red">Email/Password Salah!</h3><br>
+                        @endif
                         <form method="POST" action="/login/proses-login">
                             @csrf
 
@@ -131,6 +134,4 @@
                                             }
                                         }
         </script>
-            
-
 </body></html>

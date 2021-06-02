@@ -19,6 +19,7 @@ class CreateJadwalsTable extends Migration
             $table->bigInteger('tahun_akademik_id');
             $table->string('tgl_awal_isi');
             $table->string('tgl_akhir_isi');
+            $table->string('tipe');
             $table->timestamps();
         });
     }

@@ -29,6 +29,7 @@
 								<thead>
 									<tr>
 										<th>No</th>
+										<th>Tipe</th>
 										<th>Nama</th>
 										<th>Tahun Akademik</th>
 										<th>Tanggal Mulai</th>
@@ -43,6 +44,15 @@
 									@endphp
 									<tr>
 										<td>{{$loop->iteration}}</td>
+										<td>
+											@if($user->role == 3)
+											Guru
+											@elseif($user->role == 4)
+											Karyawan
+											@else
+											None
+											@endif
+										</td>
 										<td>{{$user->name}}</td>
 										<td>{{$jadwal->tahun_akademik_id}}</td>
 										<td>{{$jadwal->tgl_awal_isi}}</td>

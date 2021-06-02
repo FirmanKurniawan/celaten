@@ -149,6 +149,7 @@ class AdminSeeder extends Seeder
                 'tahun_akademik_id' => 2019,
                 'tgl_awal_isi' => '2021-05-20',
                 'tgl_akhir_isi' => '2021-05-20',
+                'tipe' => 'guru',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
@@ -158,6 +159,7 @@ class AdminSeeder extends Seeder
                 'tahun_akademik_id' => 2019,
                 'tgl_awal_isi' => '2021-05-20',
                 'tgl_akhir_isi' => '2021-05-20',
+                'tipe' => 'karyawan',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
