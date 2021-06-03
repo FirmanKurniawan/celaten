@@ -37,7 +37,16 @@
 										<i class="fas fa-user"></i>
 									</div>
 								</div>
-								<input type="number" class="form-control phone-number" name="tahun_akademik_id" placeholder="Tahun Akademik" required>
+								<select class="form-control" name="tahun_akademik_id" required>
+									<option selected>Silakan Pilih</option>
+									<?php 
+										use App\Tahunakademik;
+										$tahunakademik = Tahunakademik::all();
+									 ?>
+									@foreach($tahunakademik as $j)
+									<option value="{{$j->id}}">{{$j->name}}-{{$j->keterangan}}</option>
+									@endforeach
+								</select>
 							</div>
 						</div>
 						<div class="form-group">

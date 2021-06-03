@@ -143,27 +143,33 @@ class AdminSeeder extends Seeder
             ],
         ]);
 
-        DB::table('jadwals')->insert([
+        DB::table('tahunakademiks')->insert([
             [
-                'user_id' => 1,
-                'tahun_akademik_id' => 2019,
-                'tgl_awal_isi' => '2021-05-20',
-                'tgl_akhir_isi' => '2021-05-20',
-                'tipe' => 'guru',
+                'name' => 2021,
+                'keterangan' => 'Semester 1',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],
-            
             [
-                'user_id' => 1,
-                'tahun_akademik_id' => 2019,
-                'tgl_awal_isi' => '2021-05-20',
-                'tgl_akhir_isi' => '2021-05-20',
-                'tipe' => 'karyawan',
+                'name' => 2021,
+                'keterangan' => 'Semester 2',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => 2022,
+                'keterangan' => 'Semester 1',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'name' => 2022,
+                'keterangan' => 'Semester 2',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ]
         ]);
+
 
         DB::table('pertanyaans')->insert([
             [

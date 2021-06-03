@@ -16,11 +16,14 @@ class CreateJadwalsTable extends Migration
         Schema::create('jadwals', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->Integer('user_id'); //buat ambil jabatan sama id user
-            $table->bigInteger('tahun_akademik_id');
+            $table->bigInteger('tahun_akademik_id')->unsigned();
             $table->string('tgl_awal_isi');
             $table->string('tgl_akhir_isi');
             $table->string('tipe');
             $table->timestamps();
+
+
+            $table->foreign("tahun_akademik_id")->references("id")->on("tahunakademiks")->onUpdate("cascade")->onDelete("cascade");
         });
     }
 
