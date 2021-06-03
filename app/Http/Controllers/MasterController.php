@@ -12,8 +12,6 @@ class MasterController extends Controller
    		return view('master.index');
     }
 
-
-
     public function indexguru(){
         $d['katejabatans'] = Katejabatan::all();
         $d['gurus'] = User::where('role',3)->get();

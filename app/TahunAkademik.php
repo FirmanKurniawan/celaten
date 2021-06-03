@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tahunakademik extends Model
 {
-    //
+    protected $guarded = [];
 }

@@ -9,6 +9,7 @@ use App\Katejabatan;
 
 class User extends Authenticatable
 {
+    protected $guarded = [];
 
     public function katejabatan()
     {
@@ -22,8 +23,6 @@ class User extends Authenticatable
      *
      * @var array
      */
-
-    protected $guarded = [];
     
     // protected $fillable = [
     //     'name', 'email', 'password',

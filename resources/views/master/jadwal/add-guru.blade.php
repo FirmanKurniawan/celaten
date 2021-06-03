@@ -18,6 +18,7 @@
 										<i class="fas fa-user"></i>
 									</div>
 								</div>
+								<input type="hidden" name="tipe" value="guru">
 								<select class="form-control" name="user_id">
 									<option selected>Silakan Pilih</option>
 									@foreach($users as $user)

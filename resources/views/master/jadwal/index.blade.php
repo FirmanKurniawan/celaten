@@ -54,7 +54,7 @@
 											@endif
 										</td>
 										<td>{{$user->name}}</td>
-										<td>{{$jadwal->tahun_akademik_id->name->keterangan}}</td>
+										<td>{{$jadwal->tahunakademik->name}} - {{$jadwal->tahunakademik->keterangan}}</td>
 										<td>{{$jadwal->tgl_awal_isi}}</td>
 										<td>{{$jadwal->tgl_akhir_isi}}</td>
 									</tr>
