@@ -2,84 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use App\TahunAkademik;
+use App\Tahunakademik;
 use Illuminate\Http\Request;
 
-class TahunAkademikController extends Controller
+class TahunakademikController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function index(){
+        $d['tahunakademiks'] = Tahunakademik::all();
+        return view('master.tahunakademik.index', $d);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function process_tahunakademik(Request $request){
+        $user = new Tahunakademik;
+        $user->name = $request->name;
+        $user->keterangan = $request->keterangan;
+        $user->save();
+        return redirect()->back();      
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function edittahunakademik($id){
+        $d['tahunakademiks'] = Tahunakademik::find($id);
+        return view('master.tahunakademik.edit', $d);
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\TahunAkademik  $tahunAkademik
-     * @return \Illuminate\Http\Response
-     */
-    public function show(TahunAkademik $tahunAkademik)
-    {
-        //
+    public function update(Request $r){
+        $d = Tahunakademik::find($r->input('id'));
+        $d->name = $r->input("name");
+        $d->keterangan = $r->input("keterangan");
+        $d->save();
+        return redirect()->back();
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\TahunAkademik  $tahunAkademik
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(TahunAkademik $tahunAkademik)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\TahunAkademik  $tahunAkademik
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, TahunAkademik $tahunAkademik)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\TahunAkademik  $tahunAkademik
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(TahunAkademik $tahunAkademik)
-    {
-        //
+    public function deletetahunakademik($id){
+        $tahunakademik = Tahunakademik::find($id);
+        $tahunakademik->delete();
+        return redirect(url('/master/tahunakademik'));
     }
 }

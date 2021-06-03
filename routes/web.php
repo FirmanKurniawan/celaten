@@ -66,6 +66,18 @@ Route::group(['middleware' => 'auth'], function(){
 			Route::get('/karyawan/delete/{id}', 'MasterController@deletekaryawan');
 			Route::get('/karyawan/edit/{id}/', 'MasterController@editkaryawan');
 			Route::post('/karyawan/edit', 'MasterController@process_editkaryawan')->name('process_editkaryawan');
+
+			Route::get('pertanyaan', 'PertanyaanController@index');
+			Route::post('pertanyaan', 'PertanyaanController@process_pertanyaan');
+			Route::get('/pertanyaan/delete/{id}', 'PertanyaanController@deletepertanyaan');
+			Route::get('/pertanyaan/edit/{id}/', 'PertanyaanController@editpertanyaan');
+			Route::post('/pertanyaan/update', 'PertanyaanController@update');
+
+			Route::get('tahunakademik', 'TahunakademikController@index');
+			Route::post('tahunakademik', 'TahunakademikController@process_tahunakademik');
+			Route::get('/tahunakademik/delete/{id}', 'TahunakademikController@deletetahunakademik');
+			Route::get('/tahunakademik/edit/{id}/', 'TahunakademikController@edittahunakademik');
+			Route::post('/tahunakademik/update', 'TahunakademikController@update');
 		});
 	});
 
@@ -139,10 +151,3 @@ Route::group(['middleware' => 'auth'], function(){
 	        Route::get('/master/katejabatan/edit/{id}', 'KatejabatanController@edit');
 	        Route::post('/master/katejabatan/update', 'KatejabatanController@update');
 	        Route::get('/master/katejabatan/delete/{id}', 'KatejabatanController@delete');
-
-
-	Route::get('pertanyaan', 'PertanyaanController@index');
-	Route::post('pertanyaan', 'PertanyaanController@process_pertanyaan');
-	Route::get('/pertanyaan/delete/{id}', 'PertanyaanController@deletepertanyaan');
-	Route::get('/pertanyaan/edit/{id}/', 'PertanyaanController@editpertanyaan');
-	Route::post('/pertanyaan/update', 'PertanyaanController@update');
