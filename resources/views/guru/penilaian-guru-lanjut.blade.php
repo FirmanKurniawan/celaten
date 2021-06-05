@@ -10,11 +10,11 @@
 				<form id="nilai" action="/guru/penilaian-guru-lanjut" method="POST" enctype="multipart/form-data">
 					@csrf
 					<div class="card-body">
-						<input type="hidden" name="target" value="{{$guru->user_id}}">
 						@php
 			              $guru = \App\Jadwal::where('tipe', "guru")->first();
 			            @endphp
 
+						<input type="hidden" name="target" value="{{$guru->user_id}}">
 						@foreach($pertanyaan as $key => $pertanyaans)
 						<div class="form-group">
 							@php
