@@ -60,6 +60,21 @@
               </div>
             </div>
           </div>
+
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <img src="{{asset('stisla/images/smk1.jpg')}}" style="width: 350px;height: 350px; margin-left: 100px;">
+
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <p style="margin-top: 100px;"><b>SMKN 1 Gunungputri adalah Sekolah Menengah Kejuruan (SMK) Negeri yang berlokasi di Propinsi Jawa Barat Kabupaten Kab. Bogor dengan alamat Jl. Barokah No. 6 Kel. Wanaherang Kec. Gunungputri.</b></p>
+
+            </div>
+            
+            
+          </div>
+
+          
         </section>
 @endsection
 @section('js')
