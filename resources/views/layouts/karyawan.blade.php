@@ -70,7 +70,7 @@
             <li class="menu-header">Menu</li>
             <li><a class="nav-link" href="{{url('karyawan/')}}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
             @php
-              $karyawan = \App\Jadwal::where('id', 2)->first();
+              $karyawan = \App\Jadwal::where('tipe', "karyawan")->first();
             @endphp
 
             @if($karyawan->user_id != Auth::user()->id)

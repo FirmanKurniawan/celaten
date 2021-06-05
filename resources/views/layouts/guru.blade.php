@@ -70,7 +70,7 @@
             <li class="menu-header">Menu</li>
             <li class=active><a class="nav-link" href="{{url('guru/')}}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
             @php
-              $guru = \App\Jadwal::where('id', 1)->first();
+              $guru = \App\Jadwal::where('tipe', "guru")->first();
             @endphp
 
             @if($guru->user_id != Auth::user()->id)
