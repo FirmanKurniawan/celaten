@@ -11,6 +11,14 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('tampilans')->insert([
+            [
+                'Deskripsi' => 'SMKN 1 Gunungputri adalah Sekolah Menengah Kejuruan (SMK) Negeri yang berlokasi di Propinsi Jawa Barat Kabupaten Kab. Bogor dengan alamat Jl. Barokah No. 6 Kel. Wanaherang Kec. Gunungputri.',
+                'foto' => '',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+        ]);
         DB::table('katejabatans')->insert([
         	[
                 'nama' => 'Kepala Sekolah',

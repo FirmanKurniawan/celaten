@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Katejabatan;
+use App\Tampilan;
 
 class MasterController extends Controller
 {
@@ -202,4 +203,26 @@ class MasterController extends Controller
         $karyawan->delete();
         return redirect(url('/master/karyawan'));
     }
+
+
+    public function indextampilan()
+    {
+        return view('master.tampilandashboard.index');
+    }
+    public function updatetampilan(Request $r)
+    {
+        $l = Tampilan::find($r->input('id'));
+        $l->deskripsi = $r->input('deskripsi');
+
+        if($r->file('foto')){
+            $file = $r->file('foto');
+            $filename = $file->getClientOriginalName();
+            $r->file('foto')->move("foto/tampilandashboard", $filename);
+            $l->foto = $filename;
+        }
+        $l->save();
+        return redirect(url('/master/tampilandashboard'));
+    }
+
+
 }

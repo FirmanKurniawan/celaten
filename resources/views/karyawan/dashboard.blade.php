@@ -60,6 +60,23 @@
               </div>
             </div>
           </div>
+          <?php 
+            $tampilan = App\Tampilan::all();
+           ?>
+          @foreach($tampilan as $s)
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <img src="{{ asset('foto/tampilandashboard/'.$s->foto) }}" style="width: 350px;height: 350px; margin-left: 100px;">
+
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <p style="margin-top: 100px;"><b>{{$s->deskripsi}}</b></p>
+
+            </div>
+            
+            
+          </div>
+          @endforeach
         </section>
 @endsection
 @section('js')

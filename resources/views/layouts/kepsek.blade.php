@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Blank Page &mdash; Stisla</title>
+  <title>SMK Negeri 1 Gunung Putri</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{asset('stisla/dist/assets/modules/bootstrap/css/bootstrap.min.css')}}">
@@ -58,11 +58,12 @@
           </li>
         </ul>
       </nav>
-      <div class="main-sidebar sidebar-style-2">
+      <div class="main-sidebar sidebar-style-2"><br>
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
-          </div>
+            <img src="{{asset('stisla/images/smk1.jpg')}}" style="width: 30%; height: 120%;">&nbsp;
+            <a href="#">SMK N 1 G.Putri</a>
+          </div><br><br>
           <div class="sidebar-brand sidebar-brand-sm">
             <a href="index.html">St</a>
           </div>
@@ -72,12 +73,7 @@
             <li><a class="nav-link" href="{{url('kepsek/nilai/guru')}}"><i class="fas fa-fire"></i> <span>Hasil Nilai Guru</span></a></li>
             <li><a class="nav-link" href="{{url('kepsek/nilai/karyawan')}}"><i class="fas fa-fire"></i> <span>Hasil Nilai Karyawan</span></a></li>
           </ul>
-
-          <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-            <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
-              <i class="fas fa-rocket"></i> Documentation
-            </a>
-          </div>        </aside>
+        </aside>
       </div>
 
       <!-- Main Content -->
