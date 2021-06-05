@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Blank Page &mdash; Stisla</title>
+  <title>SMK Negeri 1 Gunung Putri</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{asset('stisla/dist/assets/modules/bootstrap/css/bootstrap.min.css')}}">
@@ -81,7 +81,7 @@
               </ul>
             </li>
             <li><a class="nav-link" href="{{asset('master/katejabatan')}}"><i class="far fa-address-card"></i> <span>Kategori Jabatan</span></a></li>
-            <li><a class="nav-link" href="{{asset('master/tahunakademik')}}"><i class="far fa-address-card"></i> <span>Tahun Akademik</span></a></li>     
+            <li><a class="nav-link" href="{{asset('master/tahunakademik')}}"><i class="fa fa-calendar"></i> <span>Tahun Akademik</span></a></li>     
             <li><a class="nav-link" href="{{asset('master/pertanyaan')}}"><i class="far fa-question-circle"></i> <span>Membuat Pertanyaan</span></a></li>     
             <li><a class="nav-link" href="{{asset('master/jadwal')}}"><i class="far fa-calendar-check"></i> <span>Jadwal Penilaian</span></a></li>     
           </ul>
