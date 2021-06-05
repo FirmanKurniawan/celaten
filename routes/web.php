@@ -16,7 +16,6 @@ Route::get('/profile', function () {
 });
 
 
-
 // Auth::routes();
 Route::get('login', 'PageController@login')->name('login');
 Route::get('logout', 'PageController@logout')->name('logout');
@@ -78,6 +77,9 @@ Route::group(['middleware' => 'auth'], function(){
 			Route::get('/tahunakademik/delete/{id}', 'TahunakademikController@deletetahunakademik');
 			Route::get('/tahunakademik/edit/{id}/', 'TahunakademikController@edittahunakademik');
 			Route::post('/tahunakademik/update', 'TahunakademikController@update');
+
+			Route::get('/tampilandashboard', 'MasterController@indextampilan');
+    		Route::post('/tampilandashboard/updatetampilan', 'MasterController@updatetampilan');
 		});
 	});
 

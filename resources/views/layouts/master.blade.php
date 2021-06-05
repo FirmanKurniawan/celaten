@@ -83,7 +83,8 @@
             <li><a class="nav-link" href="{{asset('master/katejabatan')}}"><i class="far fa-address-card"></i> <span>Kategori Jabatan</span></a></li>
             <li><a class="nav-link" href="{{asset('master/tahunakademik')}}"><i class="fa fa-calendar"></i> <span>Tahun Akademik</span></a></li>     
             <li><a class="nav-link" href="{{asset('master/pertanyaan')}}"><i class="far fa-question-circle"></i> <span>Membuat Pertanyaan</span></a></li>     
-            <li><a class="nav-link" href="{{asset('master/jadwal')}}"><i class="far fa-calendar-check"></i> <span>Jadwal Penilaian</span></a></li>     
+            <li><a class="nav-link" href="{{asset('master/jadwal')}}"><i class="far fa-calendar-check"></i> <span>Jadwal Penilaian</span></a></li>   
+            <li><a class="nav-link" href="{{asset('master/tampilandashboard')}}"><i class="far fa-calendar-check"></i> <span>Tampilan</span></a></li>   
           </ul>
         </aside>
       </div>

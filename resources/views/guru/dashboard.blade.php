@@ -61,18 +61,23 @@
             </div>
           </div>
 
+          <?php 
+            $tampilan = App\Tampilan::all();
+           ?>
+          @foreach($tampilan as $s)
           <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
-              <img src="{{asset('stisla/images/smk1.jpg')}}" style="width: 350px;height: 350px; margin-left: 100px;">
+              <img src="{{ asset('foto/tampilandashboard/'.$s->foto) }}" style="width: 350px;height: 350px; margin-left: 100px;">
 
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
-              <p style="margin-top: 100px;"><b>SMKN 1 Gunungputri adalah Sekolah Menengah Kejuruan (SMK) Negeri yang berlokasi di Propinsi Jawa Barat Kabupaten Kab. Bogor dengan alamat Jl. Barokah No. 6 Kel. Wanaherang Kec. Gunungputri.</b></p>
+              <p style="margin-top: 100px;"><b>{{$s->deskripsi}}</b></p>
 
             </div>
             
             
           </div>
+          @endforeach
 
           
         </section>
