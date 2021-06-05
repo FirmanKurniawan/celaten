@@ -170,6 +170,26 @@ class AdminSeeder extends Seeder
             ]
         ]);
 
+        DB::table('jadwals')->insert([
+            [
+                'user_id' => 3,
+                'tahun_akademik_id' => 1,
+                'tgl_awal_isi' => '2021-06-05',
+                'tgl_akhir_isi' => '2021-06-30',
+                'tipe' => 'guru',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ],
+            [
+                'user_id' => 1,
+                'tahun_akademik_id' => 1,
+                'tgl_awal_isi' => '2021-06-05',
+                'tgl_akhir_isi' => '2021-06-30',
+                'tipe' => 'karyawan',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+            ]
+        ]);
 
         DB::table('pertanyaans')->insert([
             [
