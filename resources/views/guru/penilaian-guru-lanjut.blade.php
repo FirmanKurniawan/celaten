@@ -12,7 +12,7 @@
 					<div class="card-body">
 						<input type="hidden" name="target" value="{{$guru->user_id}}">
 						@php
-			              $guru = \App\Jadwal::where('id', 1)->first();
+			              $guru = \App\Jadwal::where('tipe', "guru")->first();
 			            @endphp
 
 						@foreach($pertanyaan as $key => $pertanyaans)
