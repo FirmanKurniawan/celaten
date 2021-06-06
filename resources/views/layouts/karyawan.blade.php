@@ -40,10 +40,14 @@
         </form>
         <ul class="navbar-nav navbar-right">
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <img alt="image" src="{{asset('stisla/dist/assets/img/avatar/avatar-1.png')}}" class="rounded-circle mr-1">
             <?php 
               $name = \App\User::where('id', Auth::user()->id)->first();
             ?>
+            @if(empty($name->foto))
+            <img alt="image" src="{{asset('stisla/dist/assets/img/avatar/avatar-1.png')}}" class="rounded-circle mr-1">
+            @else
+            <img alt="image" src="{{asset('foto/karyawan/'.$name->foto)}}" class="rounded-circle mr-1">
+            @endif
             <div class="d-sm-none d-lg-inline-block">{{$name->name}}</div></a>
             <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-title">Selamat Datang</div>
