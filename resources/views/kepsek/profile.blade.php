@@ -81,7 +81,11 @@
 							<label>Foto Diri</label>
 							<center>
 							<div class="form-group">
-								<img src="{{url('foto/kepsek/'. $q->foto)}}" alt="Nature" class="responsive" id="blah1" style="width: 60%;height: 60%; border-radius: 10%;">
+								@if(empty($q->foto))
+								<img src="{{asset('stisla/dist/assets/img/avatar/avatar-1.png')}}" alt="Nature" class="responsive" id="blah1" style="width: 50%;height: 50%; border-radius: 10%;">
+								@else
+								<img src="{{url('foto/kepsek/'. $q->foto)}}" alt="Nature" class="responsive" id="blah1" style="width: 50%;height: 50%; border-radius: 10%;">
+								@endif
 							</div>
 							</center>
 							<div class="input-group">

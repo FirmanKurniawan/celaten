@@ -66,7 +66,11 @@
           @foreach($tampilan as $s)
           <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
+              @if(empty($s->foto))
+              <img src="{{asset('stisla/images/smk1.jpg')}}" style="width: 350px;height: 350px; margin-left: 100px;">
+              @else
               <img src="{{ asset('foto/tampilandashboard/'.$s->foto) }}" style="width: 350px;height: 350px; margin-left: 100px;">
+              @endif
 
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
