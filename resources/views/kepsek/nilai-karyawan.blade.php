@@ -57,7 +57,7 @@
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>Total Bobot</h4>
+                    <h4>Total Bobot Jadwal Sekarang</h4>
                   </div>
                   <div class="card-body">
                     @php  

@@ -69,9 +69,6 @@
 											<a data-toggle="modal" data-target="#Edittahunakademik{{$s->id}}" class="btn btn-outline-warning">
 							                  <i class="far fa-edit"></i>
 							                </a>
-							                <a href="/master/tahunakademik/delete/{{$s->id}}" class="btn btn-outline-danger">
-							                  <i class="far fa-trash-alt"></i>
-							                </a>
             							</td>
 									</tr>
 									@endforeach

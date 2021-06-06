@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{{asset('stisla/dist/assets/modules/bootstrap/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('stisla/dist/assets/modules/fontawesome/css/all.min.css')}}">
   <link rel="stylesheet" href="{{asset('stisla/dist/assets/css/skins/customDataTable.css')}}">
+  <link rel="shortcut icon" href="{{asset('stisla/images/smk1.jpg')}}">
 
   <!-- CSS Libraries -->
     @yield('css')
@@ -47,9 +48,6 @@
             <div class="d-sm-none d-lg-inline-block">{{$name->name}}</div></a>
             <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-title">Selamat Datang</div>
-              <a href="features-profile.html" class="dropdown-item has-icon">
-                <i class="far fa-user"></i> Profile
-              </a>
               <div class="dropdown-divider"></div>
               <a href="/logout" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout
@@ -65,7 +63,7 @@
             <a href="#">SMK N 1 G.Putri</a>
           </div><br><br>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
+            <a href="#">SMK 1</a>
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
@@ -81,10 +79,10 @@
               </ul>
             </li>
             <li><a class="nav-link" href="{{asset('master/katejabatan')}}"><i class="far fa-address-card"></i> <span>Kategori Jabatan</span></a></li>
-            <li><a class="nav-link" href="{{asset('master/tahunakademik')}}"><i class="fa fa-calendar"></i> <span>Tahun Akademik</span></a></li>     
+            <li><a class="nav-link" href="{{asset('master/tahunakademik')}}"><i class="far fa-calendar"></i> <span>Tahun Akademik</span></a></li>     
             <li><a class="nav-link" href="{{asset('master/pertanyaan')}}"><i class="far fa-question-circle"></i> <span>Membuat Pertanyaan</span></a></li>     
             <li><a class="nav-link" href="{{asset('master/jadwal')}}"><i class="far fa-calendar-check"></i> <span>Jadwal Penilaian</span></a></li>   
-            <li><a class="nav-link" href="{{asset('master/tampilandashboard')}}"><i class="far fa-calendar-check"></i> <span>Tampilan</span></a></li>   
+            <li><a class="nav-link" href="{{asset('master/tampilandashboard')}}"><i class="far fa-star"></i> <span>Tampilan</span></a></li>   
           </ul>
         </aside>
       </div>
