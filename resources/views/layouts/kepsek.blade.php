@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{{asset('stisla/dist/assets/modules/bootstrap/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('stisla/dist/assets/modules/fontawesome/css/all.min.css')}}">
   <link rel="stylesheet" href="{{asset('stisla/dist/assets/css/skins/customDataTable.css')}}">
+  <link rel="shortcut icon" href="{{asset('stisla/images/smk1.jpg')}}">
 
   <!-- CSS Libraries -->
   @yield('css')
@@ -43,11 +44,15 @@
             <?php 
               $name = \App\User::where('id', Auth::user()->id)->first();
             ?>
+<<<<<<< HEAD
             @if(empty($name->foto))
             <img alt="image" src="{{asset('stisla/dist/assets/img/avatar/avatar-1.png')}}" class="rounded-circle mr-1">
             @else
             <img alt="image" src="{{asset('foto/kepsek/'.$name->foto)}}" class="rounded-circle mr-1">
             @endif
+=======
+            <img alt="image" src="{{asset('foto/kepsek/'.$name->foto)}}" class="rounded-circle mr-1" style="width: 50px;height: 50px;">
+>>>>>>> bb5c17409b0b8f5a6e881ea2ec3283a0aeee6645
             <div class="d-sm-none d-lg-inline-block">{{$name->name}}</div></a>
             <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-title">Selamat Datang</div>
@@ -69,13 +74,13 @@
             <a href="#">SMK N 1 G.Putri</a>
           </div><br><br>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
+            <a href="#">SMK 1</a>
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Menu</li>
             <li><a class="nav-link" href="{{url('kepsek/')}}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
-            <li><a class="nav-link" href="{{url('kepsek/nilai/guru')}}"><i class="fas fa-fire"></i> <span>Hasil Nilai Guru</span></a></li>
-            <li><a class="nav-link" href="{{url('kepsek/nilai/karyawan')}}"><i class="fas fa-fire"></i> <span>Hasil Nilai Karyawan</span></a></li>
+            <li><a class="nav-link" href="{{url('kepsek/nilai/guru')}}"><i class="fas fa-trophy"></i> <span>Hasil Nilai Guru</span></a></li>
+            <li><a class="nav-link" href="{{url('kepsek/nilai/karyawan')}}"><i class="fas fa-trophy"></i> <span>Hasil Nilai Karyawan</span></a></li>
           </ul>
         </aside>
       </div>
