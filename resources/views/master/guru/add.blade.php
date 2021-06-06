@@ -143,3 +143,13 @@ reader.readAsDataURL(input.files[0]);
 }
 </script>
 @endsection
+@section('js')
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@if (session('duplicate'))
+    <script>
+        $(document).ready(
+            swal('Email/NIP/NIK Anda Harus UNIK!', 'Silakan klik tombol ok!', 'error')
+        );
+    </script>
+@endif
+@endsection

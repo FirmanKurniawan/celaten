@@ -24,25 +24,33 @@ class MasterController extends Controller
     }
 
     public function process_addguru(Request $request){
-        $user = new User;
-        $user->name = $request->name;
-        $user->nik = $request->nik;
-        $user->nip = $request->nip;
-        $user->alamat = $request->alamat;
-        $user->notlp = $request->notlp;
-        $user->jabatan_id = $request->jabatan_id;
-        $user->email = $request->email;
-        $user->role = '3';
-        $user->password = Bcrypt($request->password);
+        $check_email = User::where('email', $request->email)->first();
+        $check_nik = User::where('nik', $request->nik)->first();
+        $check_nip = User::where('nip', $request->nip)->first();
+        if($check_email && $check_nik && $check_nip){
 
-        if($request->hasFile('foto')){
-            $name = $request->file('foto')->getClientOriginalName();
-            $request->foto->move(public_path('/foto/guru'), $name);
-            $user->foto = $name;
+            $user = new User;
+            $user->name = $request->name;
+            $user->nik = $request->nik;
+            $user->nip = $request->nip;
+            $user->alamat = $request->alamat;
+            $user->notlp = $request->notlp;
+            $user->jabatan_id = $request->jabatan_id;
+            $user->email = $request->email;
+            $user->role = '3';
+            $user->password = Bcrypt($request->password);
+
+            if($request->hasFile('foto')){
+                $name = $request->file('foto')->getClientOriginalName();
+                $request->foto->move(public_path('/foto/guru'), $name);
+                $user->foto = $name;
+            }
+
+            $user->save();
+            return redirect('/master/guru');
+        }else{
+            return redirect('master/guru/add')->with('duplicate', 'Login Successfully!');
         }
-
-        $user->save();
-        return redirect('/master/guru');
     }
     public function editguru($id){
         $d['katejabatans'] = Katejabatan::all();
@@ -89,25 +97,32 @@ class MasterController extends Controller
     }
 
     public function process_addkepsek(Request $request){
-        $user = new User;
-        $user->name = $request->name;
-        $user->nik = $request->nik;
-        $user->nip = $request->nip;
-        $user->alamat = $request->alamat;
-        $user->notlp = $request->notlp;
-        $user->jabatan_id = $request->jabatan_id;
-        $user->email = $request->email;
-        $user->role = '2';
-        $user->password = Bcrypt($request->password);
+        $check_email = User::where('email', $request->email)->first();
+        $check_nik = User::where('nik', $request->nik)->first();
+        $check_nip = User::where('nip', $request->nip)->first();
+        if($check_email && $check_nik && $check_nip){
 
-        if($request->hasFile('foto')){
-            $name = $request->file('foto')->getClientOriginalName();
-            $request->foto->move(public_path('/foto/kepsek'), $name);
-            $user->foto = $name;
+            $user = new User;
+            $user->name = $request->name;
+            $user->nik = $request->nik;
+            $user->nip = $request->nip;
+            $user->alamat = $request->alamat;
+            $user->notlp = $request->notlp;
+            $user->jabatan_id = $request->jabatan_id;
+            $user->email = $request->email;
+            $user->role = '2';
+            $user->password = Bcrypt($request->password);
+
+            if($request->hasFile('foto')){
+                $name = $request->file('foto')->getClientOriginalName();
+                $request->foto->move(public_path('/foto/kepsek'), $name);
+                $user->foto = $name;
+            }
+            $user->save();
+            return redirect('/master/kepalasekolah');
+        }else{
+            return redirect('master/kepalasekolah/add')->with('duplicate', 'Login Successfully!');
         }
-
-        $user->save();
-        return redirect('/master/kepalasekolah');
     }
     public function editkepsek($id){
         $kepseks = User::find($id);
@@ -155,25 +170,33 @@ class MasterController extends Controller
     }
 
     public function process_addkaryawan(Request $request){
-        $user = new User;
-        $user->name = $request->name;
-        $user->nik = $request->nik;
-        $user->nip = $request->nip;
-        $user->alamat = $request->alamat;
-        $user->notlp = $request->notlp;
-        $user->jabatan_id = $request->jabatan_id;
-        $user->email = $request->email;
-        $user->role = '4';
-        $user->password = Bcrypt($request->password);
+        $check_email = User::where('email', $request->email)->first();
+        $check_nik = User::where('nik', $request->nik)->first();
+        $check_nip = User::where('nip', $request->nip)->first();
+        if($check_email && $check_nik && $check_nip){
 
-        if($request->hasFile('foto')){
-            $name = $request->file('foto')->getClientOriginalName();
-            $request->foto->move(public_path('/foto/karyawan'), $name);
-            $user->foto = $name;
+            $user = new User;
+            $user->name = $request->name;
+            $user->nik = $request->nik;
+            $user->nip = $request->nip;
+            $user->alamat = $request->alamat;
+            $user->notlp = $request->notlp;
+            $user->jabatan_id = $request->jabatan_id;
+            $user->email = $request->email;
+            $user->role = '4';
+            $user->password = Bcrypt($request->password);
+
+            if($request->hasFile('foto')){
+                $name = $request->file('foto')->getClientOriginalName();
+                $request->foto->move(public_path('/foto/karyawan'), $name);
+                $user->foto = $name;
+            }
+
+            $user->save();
+            return redirect('/master/karyawan');
+        }else{
+            return redirect('master/karyawan/add')->with('duplicate', 'Login Successfully!');
         }
-
-        $user->save();
-        return redirect('/master/karyawan');
     }
     public function editkaryawan($id){
         $d['karyawans'] = User::find($id);
