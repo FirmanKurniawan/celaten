@@ -24,13 +24,15 @@
                   <script src="/assets/v1/js/external/html5shiv.js"></script>
           <script src="/assets/v1/js/external/respond.min.js"></script>
           <![endif]-->
+        <?php 
+            $tampilan = App\Tampilan::all();
+           ?>
+          @foreach($tampilan as $s)
         <style type="text/css">
             .login-page .form-box .univ-identity-box{
-                background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url('/templatelogin/login/denah.jpg') bottom;
                 background-size:cover;
             }
             html, body{
-                background-image: url('/templatelogin/login/sekolah.jpg');
                 background-size: cover;
             }
             .password{
@@ -62,21 +64,35 @@
         <style type="text/css">
 </style>    </head>
     <body class="login-page" style="">
+        @if(empty($q->foto2))
+            <img src="{{asset('foto/tampilandashboard/sekolah.jpg')}}" style="height: 100%;width: 100%; background-size: cover;">
+         @else
+            <img src="{{url('foto/tampilandashboard/'. $s->foto2)}}" style="width: 100vw; height: 100vh; background-size: cover;">
+        @endif
         <div class="container">
             <div class="row">
                 <div class="form-box col-md-8 col-sm-10 col-xs-12">
                     <div class="col-lg-7 col-md-6 col-sm-6 col-xs-12 univ-identity-box">
+                        @if(empty($q->foto1))
+                                <img src="{{asset('foto/tampilandashboard/denahsmk.jpg')}}" style="height: 100%;width: 100%; background-size: cover;">
+                                @else
+                                <img src="{{url('foto/tampilandashboard/'. $s->foto1)}}" style="height: 100%;width: 100%; background-size: cover;">
+                                @endif
                         <div class="univ-text-container">
                             <div class="univ-text">
-                                <h4 class="welcome text-light">Selamat Datang</h4>
+                                <h4 class="welcome text-light">{{$s->text1}}</h4>
                                 <div class="clearfix"></div>
-                                <h2 class="no-margin text-light">S M K N 1 G.P U T R I</h2>
-                                <h3 class="no-margin"><b>Semangat lah kawan</b></h3>
+                                <h2 class="no-margin text-light">{{$s->text2}}</h2>
+                                <h3 class="no-margin"><b>{{$s->text3}}</b></h3>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12 form-login" align="center">
-                        <img src="templatelogin/login/logosmk.png" class="logo"><br>
+                        @if(empty($q->fotologo))
+                                <img src="{{asset('foto/tampilandashboard/smk1.jpg')}}" class="logo"><br>
+                                @else
+                                <img src="{{url('foto/tampilandashboard/'. $s->fotologo)}}" class="logo"><br>
+                                @endif
                         <h2 align="center" class="text-grey text-light">Silakan Login</h2><br>
                         @if (session('salah'))
                         <h3 align="center" class="text-grey text-light" style="color: red">Email/Password Salah!</h3><br>
@@ -134,4 +150,6 @@
                                             }
                                         }
         </script>
-</body></html>
+</body>
+@endforeach
+</html>

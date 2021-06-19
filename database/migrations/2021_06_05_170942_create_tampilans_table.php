@@ -17,6 +17,12 @@ class CreateTampilansTable extends Migration
             $table->bigIncrements('id');
             $table->string('deskripsi')->nullable();
             $table->string('foto')->nullable();
+            $table->string('text1')->nullable();
+            $table->string('text2')->nullable();
+            $table->string('text3')->nullable();
+            $table->string('fotologo')->nullable();
+            $table->string('foto1')->nullable();
+            $table->string('foto2')->nullable();
             $table->timestamps();
         });
     }

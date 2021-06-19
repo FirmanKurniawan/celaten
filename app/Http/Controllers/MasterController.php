@@ -247,5 +247,37 @@ class MasterController extends Controller
         return redirect(url('/master/tampilandashboard'));
     }
 
+    public function indextampilanlogin()
+    {
+        return view('master.tampilandashboard.tampilanlogin');
+    }
+    public function updatetampilanlogin(Request $r)
+    {
+        $l = Tampilan::find($r->input('id'));
+        $l->text1 = $r->input('text1');
+        $l->text2 = $r->input('text2');
+        $l->text3 = $r->input('text3');
+
+        if($r->file('fotologo')){
+            $file = $r->file('fotologo');
+            $filename = $file->getClientOriginalName();
+            $r->file('fotologo')->move("foto/tampilandashboard", $filename);
+            $l->fotologo = $filename;
+        }
+        if($r->file('foto1')){
+            $file = $r->file('foto1');
+            $filename = $file->getClientOriginalName();
+            $r->file('foto1')->move("foto/tampilandashboard", $filename);
+            $l->foto1 = $filename;
+        }
+        if($r->file('foto2')){
+            $file = $r->file('foto2');
+            $filename = $file->getClientOriginalName();
+            $r->file('foto2')->move("foto/tampilandashboard", $filename);
+            $l->foto2 = $filename;
+        }
+        $l->save();
+        return redirect(url('/master/tampilanlogin'));
+    }
 
 }

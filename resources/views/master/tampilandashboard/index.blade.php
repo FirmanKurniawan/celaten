@@ -55,6 +55,8 @@
 		</div>
 	</div>
 </section>
+		</div>
+	</div>
 <script type="text/javascript">
 function readURL1(input) {
 if (input.files && input.files[0]) {

@@ -81,8 +81,14 @@
             <li><a class="nav-link" href="{{asset('master/katejabatan')}}"><i class="far fa-address-card"></i> <span>Kategori Jabatan</span></a></li>
             <li><a class="nav-link" href="{{asset('master/tahunakademik')}}"><i class="far fa-calendar"></i> <span>Tahun Akademik</span></a></li>     
             <li><a class="nav-link" href="{{asset('master/pertanyaan')}}"><i class="far fa-question-circle"></i> <span>Membuat Pertanyaan</span></a></li>     
-            <li><a class="nav-link" href="{{asset('master/jadwal')}}"><i class="far fa-calendar-check"></i> <span>Jadwal Penilaian</span></a></li>   
-            <li><a class="nav-link" href="{{asset('master/tampilandashboard')}}"><i class="far fa-star"></i> <span>Tampilan</span></a></li>   
+            <li><a class="nav-link" href="{{asset('master/jadwal')}}"><i class="far fa-calendar-check"></i> <span>Jadwal Penilaian</span></a></li>
+            <li class="dropdown">
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-star"></i><span>Tampilan</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="{{asset('master/tampilandashboard')}}">Tampilan Dashboard</a></li>
+                <li><a class="nav-link" href="{{asset('master/tampilanlogin')}}">Tampilan Login</a></li>
+              </ul>
+            </li>  
           </ul>
         </aside>
       </div>
@@ -118,6 +124,45 @@
   <!-- Template JS File -->
   <script src="{{asset('stisla/dist/assets/js/scripts.js')}}"></script>
   <script src="{{asset('stisla/dist/assets/js/custom.js')}}"></script>
+
+
+  <script type="text/javascript">
+function readURL1(input) {
+if (input.files && input.files[0]) {
+var reader = new FileReader();
+reader.onload = function (e) {
+$('#blah1')
+.attr('src', e.target.result);
+};
+reader.readAsDataURL(input.files[0]);
+}
+}
+</script>
+<script type="text/javascript">
+function readURL2(input) {
+if (input.files && input.files[0]) {
+var reader = new FileReader();
+reader.onload = function (e) {
+$('#blah2')
+.attr('src', e.target.result);
+};
+reader.readAsDataURL(input.files[0]);
+}
+}
+</script>
+<script type="text/javascript">
+function readURL3(input) {
+if (input.files && input.files[0]) {
+var reader = new FileReader();
+reader.onload = function (e) {
+$('#blah3')
+.attr('src', e.target.result);
+};
+reader.readAsDataURL(input.files[0]);
+}
+}
+</script>
+
 
  @yield('js')
 

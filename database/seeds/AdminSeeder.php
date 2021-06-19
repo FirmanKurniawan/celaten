@@ -15,6 +15,12 @@ class AdminSeeder extends Seeder
             [
                 'Deskripsi' => 'SMKN 1 Gunungputri adalah Sekolah Menengah Kejuruan (SMK) Negeri yang berlokasi di Propinsi Jawa Barat Kabupaten Kab. Bogor dengan alamat Jl. Barokah No. 6 Kel. Wanaherang Kec. Gunungputri.',
                 'foto' => '',
+                'text1' => 'SELAMAT DATANG',
+                'text2' => 'S M K N G.P U T R I',
+                'text3' => 'Semoga Hari Mu Menyenangkan',
+                'fotologo' => '',
+                'foto1' => '',
+                'foto2' => '',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
             ],

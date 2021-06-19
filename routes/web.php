@@ -16,6 +16,7 @@ Route::get('/profile', function () {
 });
 
 
+
 // Auth::routes();
 Route::get('login', 'PageController@login')->name('login');
 Route::get('logout', 'PageController@logout')->name('logout');
@@ -80,6 +81,9 @@ Route::group(['middleware' => 'auth'], function(){
 
 			Route::get('/tampilandashboard', 'MasterController@indextampilan');
     		Route::post('/tampilandashboard/updatetampilan', 'MasterController@updatetampilan');
+
+    		Route::get('/tampilanlogin', 'MasterController@indextampilanlogin');
+    		Route::post('/tampilandashboard/updatetampilanlogin', 'MasterController@updatetampilanlogin');
 		});
 	});
 
