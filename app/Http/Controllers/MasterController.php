@@ -27,7 +27,7 @@ class MasterController extends Controller
         $check_email = User::where('email', $request->email)->first();
         $check_nik = User::where('nik', $request->nik)->first();
         $check_nip = User::where('nip', $request->nip)->first();
-        if($check_email && $check_nik && $check_nip){
+        if($check_email || $check_nik || $check_nip){
             return redirect('master/guru/add')->with('duplicate', 'Login Successfully!');
         }else{
             $user = new User;
@@ -98,7 +98,7 @@ class MasterController extends Controller
         $check_email = User::where('email', $request->email)->first();
         $check_nik = User::where('nik', $request->nik)->first();
         $check_nip = User::where('nip', $request->nip)->first();
-        if($check_email && $check_nik && $check_nip){
+        if($check_email || $check_nik || $check_nip){
             return redirect('master/kepalasekolah/add')->with('duplicate', 'Login Successfully!');
         }else{
             $user = new User;
@@ -170,7 +170,7 @@ class MasterController extends Controller
         $check_email = User::where('email', $request->email)->first();
         $check_nik = User::where('nik', $request->nik)->first();
         $check_nip = User::where('nip', $request->nip)->first();
-        if($check_email && $check_nik && $check_nip){
+        if($check_email || $check_nik || $check_nip){
             return redirect('master/karyawan/add')->with('duplicate', 'Login Successfully!');
         }else{
             $user = new User;
