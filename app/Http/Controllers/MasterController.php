@@ -9,8 +9,8 @@ use App\Tampilan;
 
 class MasterController extends Controller
 {
-	public function index(){
-   		return view('master.index');
+    public function index(){
+        return view('master.index');
     }
 
     public function indexguru(){
@@ -28,7 +28,8 @@ class MasterController extends Controller
         $check_nik = User::where('nik', $request->nik)->first();
         $check_nip = User::where('nip', $request->nip)->first();
         if($check_email && $check_nik && $check_nip){
-
+            return redirect('master/guru/add')->with('duplicate', 'Login Successfully!');
+        }else{
             $user = new User;
             $user->name = $request->name;
             $user->nik = $request->nik;
@@ -45,11 +46,8 @@ class MasterController extends Controller
                 $request->foto->move(public_path('/foto/guru'), $name);
                 $user->foto = $name;
             }
-
             $user->save();
             return redirect('/master/guru');
-        }else{
-            return redirect('master/guru/add')->with('duplicate', 'Login Successfully!');
         }
     }
     public function editguru($id){
@@ -89,7 +87,7 @@ class MasterController extends Controller
 
 
     public function indexkepsek(){
-    	$d['kelapasekolahs'] = User::where('role',2)->get();
+        $d['kelapasekolahs'] = User::where('role',2)->get();
         return view('master.kepalasekolah.index', $d);
     }
     public function addkepsek(){
@@ -101,7 +99,8 @@ class MasterController extends Controller
         $check_nik = User::where('nik', $request->nik)->first();
         $check_nip = User::where('nip', $request->nip)->first();
         if($check_email && $check_nik && $check_nip){
-
+            return redirect('master/kepalasekolah/add')->with('duplicate', 'Login Successfully!');
+        }else{
             $user = new User;
             $user->name = $request->name;
             $user->nik = $request->nik;
@@ -120,8 +119,6 @@ class MasterController extends Controller
             }
             $user->save();
             return redirect('/master/kepalasekolah');
-        }else{
-            return redirect('master/kepalasekolah/add')->with('duplicate', 'Login Successfully!');
         }
     }
     public function editkepsek($id){
@@ -174,7 +171,8 @@ class MasterController extends Controller
         $check_nik = User::where('nik', $request->nik)->first();
         $check_nip = User::where('nip', $request->nip)->first();
         if($check_email && $check_nik && $check_nip){
-
+            return redirect('master/karyawan/add')->with('duplicate', 'Login Successfully!');
+        }else{
             $user = new User;
             $user->name = $request->name;
             $user->nik = $request->nik;
@@ -194,8 +192,6 @@ class MasterController extends Controller
 
             $user->save();
             return redirect('/master/karyawan');
-        }else{
-            return redirect('master/karyawan/add')->with('duplicate', 'Login Successfully!');
         }
     }
     public function editkaryawan($id){
@@ -247,37 +243,5 @@ class MasterController extends Controller
         return redirect(url('/master/tampilandashboard'));
     }
 
-    public function indextampilanlogin()
-    {
-        return view('master.tampilandashboard.tampilanlogin');
-    }
-    public function updatetampilanlogin(Request $r)
-    {
-        $l = Tampilan::find($r->input('id'));
-        $l->text1 = $r->input('text1');
-        $l->text2 = $r->input('text2');
-        $l->text3 = $r->input('text3');
-
-        if($r->file('fotologo')){
-            $file = $r->file('fotologo');
-            $filename = $file->getClientOriginalName();
-            $r->file('fotologo')->move("foto/tampilandashboard", $filename);
-            $l->fotologo = $filename;
-        }
-        if($r->file('foto1')){
-            $file = $r->file('foto1');
-            $filename = $file->getClientOriginalName();
-            $r->file('foto1')->move("foto/tampilandashboard", $filename);
-            $l->foto1 = $filename;
-        }
-        if($r->file('foto2')){
-            $file = $r->file('foto2');
-            $filename = $file->getClientOriginalName();
-            $r->file('foto2')->move("foto/tampilandashboard", $filename);
-            $l->foto2 = $filename;
-        }
-        $l->save();
-        return redirect(url('/master/tampilanlogin'));
-    }
 
 }
