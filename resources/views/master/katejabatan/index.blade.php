@@ -115,20 +115,10 @@
           </div>
           <div class="form-group">
             <select class="form-control" name="role" required>
-              @if($j->role == 1)
-                <option selected value="{{$j->role}}">Jajaran Kepala Sekolah</option>
 
-                <option value="2">Jajaran Guru</option>
-                <option value="3">Jajaran Karyawan</option>
-              @elseif($j->role == 2)
-                <option selected value="{{$j->role}}">Jajaran Guru</option>
-                <option value="1">Jajaran Kepala Sekolah</option>
-                <option value="3">Jajaran Karyawan</option>
-              @elseif($j->role == 3)
-                <option selected value="{{$j->role}}">Jajaran Karyawan</option>
-                <option value="1">Jajaran Kepala Sekolah</option>
-                <option value="2">Jajaran Guru</option>
-              @endif
+                <option selected value="2">Jajaran Kepala Sekolah</option>
+                <option value="3">Jajaran Guru</option>
+                <option value="4">Jajaran Karyawan</option>
             </select>
           </div>
 
