@@ -136,14 +136,14 @@ Route::group(['middleware' => 'auth'], function(){
 		Route::get('/karyawan/edit/{id}/', 'MasterController@editkaryawan');
 		Route::post('/karyawan/edit', 'MasterController@process_editkaryawan')->name('process_editkaryawan');
 
-		Route::get('karyawan', 'karyawanController@dashboard');
-		Route::get('karyawan/penilaian-karyawan-lanjut', 'karyawanController@lanjut_penilaian_karyawan');
+		Route::get('karyawan', 'KaryawanController@dashboard');
+		Route::get('karyawan/penilaian-karyawan-lanjut', 'KaryawanController@lanjut_penilaian_karyawan');
 		Route::post('karyawan/penilaian-karyawan-lanjut', 'KaryawanController@process_lanjut_penilaian_karyawan');
 
 		Route::get('karyawan/penilaian-karyawan', 'KaryawanController@penilaian_karyawan');
 		Route::post('karyawan/penilaian-karyawan', 'KaryawanController@process_penilaian_karyawan');
 
-		Route::get('karyawan/penilaian-diri', 'karyawanController@lanjut_penilaian_karyawan');
+		Route::get('karyawan/penilaian-diri', 'KaryawanController@lanjut_penilaian_karyawan');
 		Route::post('karyawan/penilaian-diri', 'KaryawanController@process_lanjut_penilaian_karyawan');
 
 
